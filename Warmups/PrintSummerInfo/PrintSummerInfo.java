@@ -2,7 +2,7 @@
 // 8/31/21
 
 // Main package declaration
-package PrintSummerInfo;
+package Warmups.PrintSummerInfo;
 
 // Class declaration
 class HelloWorld {

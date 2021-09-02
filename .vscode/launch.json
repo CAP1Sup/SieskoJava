@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Tester",
+            "request": "launch",
+            "mainClass": "Exercises.CatDogSubclasses.Tester",
+            "projectName": "SieskoJava_f9c31d6c"
+        },
+        {
+            "type": "java",
+            "name": "Launch PrintDiscountPrice",
+            "request": "launch",
+            "mainClass": "Warmups.DiscountPricePrint.PrintDiscountPrice",
+            "projectName": "SieskoJava_f9c31d6c"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
