@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ClassAttendanceTracker",
+            "request": "launch",
+            "mainClass": "Projects.ClassAttendanceTracker.ClassAttendanceTracker",
+            "projectName": "SieskoJava_f9c31d6c"
+        },
+        {
+            "type": "java",
             "name": "Launch Tester",
             "request": "launch",
             "mainClass": "Exercises.CatDogSubclasses.Tester",
