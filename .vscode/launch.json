@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch StringOpsTester",
+            "request": "launch",
+            "mainClass": "Labs.StringOps.StringOpsTester",
+            "projectName": "SieskoJava_f9c31d6c"
+        },
+        {
+            "type": "java",
+            "name": "Launch StringPrints",
+            "request": "launch",
+            "mainClass": "Exercises.StringPrints.StringPrints",
+            "projectName": "SieskoJava_f9c31d6c"
+        },
+        {
+            "type": "java",
             "name": "Launch ClassAttendanceTracker",
             "request": "launch",
             "mainClass": "Projects.ClassAttendanceTracker.ClassAttendanceTracker",
