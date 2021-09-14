@@ -1,5 +1,7 @@
-// Christian Piper
-// 9/2/21
+/**
+ * @author Christian Piper
+ * @since 9/2/21
+ */
 
 // Import package
 package Exercises.CatDogSubclasses;

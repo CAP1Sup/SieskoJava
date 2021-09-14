@@ -1,5 +1,7 @@
-// Christian Piper
-// 9/8/21
+/**
+ * @author Christian Piper
+ * @since 9/8/21
+ */
 
 // Import the main package
 package Projects.ClassAttendanceTracker;

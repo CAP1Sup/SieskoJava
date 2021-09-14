@@ -37,7 +37,7 @@ public class StringOps
         return name.substring(indexSecondSpace(name) + 1);
     }
 
-    // Write a static method called middleName that takes a String called name as its formal parameter.
+    // Write a static method called middleName that 2takes a String called name as its formal parameter.
     // This method returns the middle name.
     // precondition: name is of the form first name, middle name, last name. e.g. "Kawhi Anthony Leonard"
     // Hint: call a StringOps method(s) you have already written

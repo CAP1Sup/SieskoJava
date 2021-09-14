@@ -1,5 +1,7 @@
-// Christian Piper
-// 8/31/21
+/**
+ * @author Christian Piper
+ * @since 8/31/21
+ */
 
 // Main package declaration
 package Warmups.PrintSummerInfo;
