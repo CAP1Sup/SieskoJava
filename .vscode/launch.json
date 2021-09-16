@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch PlayingWithCasting",
+            "request": "launch",
+            "mainClass": "Exercises.PlayingWithCasting.PlayingWithCasting",
+            "projectName": "SieskoJava_f9c31d6c"
+        },
+        {
+            "type": "java",
             "name": "Launch StringOpsTester",
             "request": "launch",
             "mainClass": "Labs.StringOps.StringOpsTester",
