@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ReviewQuestions",
+            "request": "launch",
+            "mainClass": "Review.Unit_1_Rev_II.ReviewQuestions",
+            "projectName": "SieskoJava_f9c31d6c"
+        },
+        {
+            "type": "java",
             "name": "Launch PlayingWithCasting",
             "request": "launch",
             "mainClass": "Exercises.PlayingWithCasting.PlayingWithCasting",
