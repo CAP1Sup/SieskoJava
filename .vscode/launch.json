@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Average",
+            "request": "launch",
+            "mainClass": "Labs.ArrayLab1.Average",
+            "projectName": "SieskoJava_f9c31d6c"
+        },
+        {
+            "type": "java",
+            "name": "Launch Average",
+            "request": "launch",
+            "mainClass": "Labs.arrayLab1.Average",
+            "projectName": "SieskoJava_f9c31d6c"
+        },
+        {
+            "type": "java",
             "name": "Launch ReviewQuestions",
             "request": "launch",
             "mainClass": "Review.Unit_1_Rev_II.ReviewQuestions",
