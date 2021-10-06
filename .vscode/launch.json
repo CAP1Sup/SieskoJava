@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch LinearSearch",
+            "request": "launch",
+            "mainClass": "Labs.ArrayLab2.LinearSearch",
+            "projectName": "SieskoJava_f9c31d6c"
+        },
+        {
+            "type": "java",
             "name": "Launch Average",
             "request": "launch",
             "mainClass": "Labs.ArrayLab1.Average",

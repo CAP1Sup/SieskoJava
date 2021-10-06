@@ -8,10 +8,10 @@ package Labs.ArrayLab1;
 class Average {
 
     // Arrays of student data
-    static int[] studentIDs;
-    static double[] exam1;
-    static double[] exam2;
-    static double[] averages;
+    private static double[] exam1;
+    private static double[] exam2;
+    private static double[] averages;
+    private static int[] studentIDs;
 
     Average() {
         studentIDs = new int[10];
