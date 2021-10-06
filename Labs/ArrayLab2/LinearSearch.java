@@ -6,20 +6,6 @@
 package Labs.ArrayLab2;
 
 public class LinearSearch {
-/*
-setData method
-
-print method
-
-findStudent method.
-
-The set_data method should prompt for the social security number and last name for five people.
-The print_data function should print the names and ss# of the five people from the array.
-The find_student function should use a linear search through the array by ss#.
-If the ss# is found print the name and ss# is in the list in the main function using the index which was returned from find_Student()
-
-If the ss# is not found print not found.
-*/
     private int[] ssNums;
     private String[] lastNames;
 

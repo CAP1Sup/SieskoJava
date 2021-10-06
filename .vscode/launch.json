@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch GUIEx1",
+            "request": "launch",
+            "mainClass": "KeyWithMes.GUIEx1.GUIEx1",
+            "projectName": "SieskoJava_f9c31d6c"
+        },
+        {
+            "type": "java",
             "name": "Launch LinearSearch",
             "request": "launch",
             "mainClass": "Labs.ArrayLab2.LinearSearch",
