@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch GUIEx2",
+            "request": "launch",
+            "mainClass": "KeyWithMes.GUIEx2.GUIEx2",
+            "projectName": "SieskoJava_f9c31d6c"
+        },
+        {
+            "type": "java",
+            "name": "Launch ArrayAlgorithms",
+            "request": "launch",
+            "mainClass": "KeyWithMes.ArrayAlgorithms.ArrayAlgorithms",
+            "projectName": "SieskoJava_f9c31d6c"
+        },
+        {
+            "type": "java",
             "name": "Launch GUIEx1",
             "request": "launch",
             "mainClass": "KeyWithMes.GUIEx1.GUIEx1",
