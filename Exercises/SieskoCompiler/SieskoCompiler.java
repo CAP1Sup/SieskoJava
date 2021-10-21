@@ -54,7 +54,7 @@ public class SieskoCompiler extends JFrame implements ActionListener {
         codeIndexCounter = 0;
         codeDisplay = "";
 
-        memAddresses = new double[50];
+        memAddresses = new double[100];
         accumulator = 0;
     }
 
@@ -68,6 +68,7 @@ public class SieskoCompiler extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(frame, "Instruction box is empty!");
             }
             else {
+                // TODO: Check input to make sure that the specified memory address is less than 100
                 // Save a new value to the code array
                 code[codeIndexCounter] = instField.getText();
                 codeIndexCounter++;
