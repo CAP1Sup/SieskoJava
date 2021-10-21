@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch SieskoCompiler",
+            "request": "launch",
+            "mainClass": "SieskoCompiler",
+            "projectName": "SieskoJava_f9c31d6c"
+        },
+        {
+            "type": "java",
             "name": "Launch GUIEx2",
             "request": "launch",
             "mainClass": "KeyWithMes.GUIEx2.GUIEx2",
