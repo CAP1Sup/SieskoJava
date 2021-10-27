@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ArrayListLab2",
+            "request": "launch",
+            "mainClass": "ArrayListLab2",
+            "projectName": "SieskoJava_f9c31d6c"
+        },
+        {
+            "type": "java",
+            "name": "Launch ArrayListLab1",
+            "request": "launch",
+            "mainClass": "ArrayListLab1",
+            "projectName": "SieskoJava_f9c31d6c"
+        },
+        {
+            "type": "java",
+            "name": "Launch ArrayListKWM",
+            "request": "launch",
+            "mainClass": "ArrayListKWM",
+            "projectName": "SieskoJava_f9c31d6c"
+        },
+        {
+            "type": "java",
             "name": "Launch SieskoCompiler",
             "request": "launch",
             "mainClass": "SieskoCompiler",
