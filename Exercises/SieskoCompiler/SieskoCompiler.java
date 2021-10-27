@@ -79,6 +79,7 @@ public class SieskoCompiler extends JFrame implements ActionListener {
 
                 // Clear the instruction box
                 instField.setText("");
+                instField.grabFocus();
             }
         }
         else if (aEvent.getSource() == run) {
