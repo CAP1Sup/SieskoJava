@@ -1,7 +1,7 @@
 // Christian Piper
 // 9/10/21
 
-package Exercises.StringPrints;
+package Exercises;
 
 public class StringPrints {
 

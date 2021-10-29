@@ -3,7 +3,7 @@
  * @since 10/4/21
  */
 
-package Labs.ArrayLab2;
+package Labs.Arrays;
 
 public class LinearSearch {
     private int[] ssNums;

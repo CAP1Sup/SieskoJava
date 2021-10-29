@@ -3,7 +3,7 @@
  * @since 9/16/21
  */
 
-package Exercises.PlayingWithCasting;
+package Exercises;
 
 public class PlayingWithCasting {
 

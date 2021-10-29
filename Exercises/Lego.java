@@ -3,7 +3,7 @@
  * @since 9/24/21
  */
 
-package Exercises.LegoClass;
+package Exercises;
 
 public class Lego {
 

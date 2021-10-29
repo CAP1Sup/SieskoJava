@@ -3,7 +3,7 @@
  * @since 10/4/21
  */
 
-package Labs.ArrayLab1;
+package Labs.Arrays;
 
 class Average {
 
