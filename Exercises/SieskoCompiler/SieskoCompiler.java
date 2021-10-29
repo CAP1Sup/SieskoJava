@@ -31,8 +31,10 @@ public class SieskoCompiler extends JFrame implements ActionListener {
         deleteLast = new JButton("Delete last instruction");
         instField = new JTextField(20);
         codeArea = new JTextArea(20, 20);
+        codeArea.setEditable(false);
 
         ok.addActionListener(this);
+        getRootPane().setDefaultButton(ok);
         run.addActionListener(this);
         clear.addActionListener(this);
         deleteLast.addActionListener(this);
