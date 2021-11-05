@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ArrayListLab4",
+            "request": "launch",
+            "mainClass": "Labs.ArrayLists.ArrayListLab4",
+            "projectName": "SieskoJava_f9c31d6c"
+        },
+        {
+            "type": "java",
             "name": "Launch ArrayListLab3",
             "request": "launch",
             "mainClass": "Labs.ArrayLists.ArrayListLab3",
