@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ArrayListLab2",
+            "request": "launch",
+            "mainClass": "Labs.ArrayLists.ArrayListLab2",
+            "projectName": "SieskoJava_f9c31d6c"
+        },
+        {
+            "type": "java",
+            "name": "Launch ArrayListLab1",
+            "request": "launch",
+            "mainClass": "Labs.ArrayLists.ArrayListLab1",
+            "projectName": "SieskoJava_f9c31d6c"
+        },
+        {
+            "type": "java",
+            "name": "Launch TwoDimArray",
+            "request": "launch",
+            "mainClass": "KeyWithMes.TwoDArrays.TwoDimArray",
+            "projectName": "SieskoJava_f9c31d6c"
+        },
+        {
+            "type": "java",
+            "name": "Launch TwoDimArray",
+            "request": "launch",
+            "mainClass": "TwoDimArray",
+            "projectName": "SieskoJava_f9c31d6c"
+        },
+        {
+            "type": "java",
+            "name": "Launch ArrayListInsertTest",
+            "request": "launch",
+            "mainClass": "Tests.ArrayListInsertTest",
+            "projectName": "SieskoJava_f9c31d6c"
+        },
+        {
+            "type": "java",
             "name": "Launch ArrayListLab4",
             "request": "launch",
             "mainClass": "Labs.ArrayLists.ArrayListLab4",
