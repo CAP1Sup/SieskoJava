@@ -6,11 +6,10 @@
 // Import the main package
 package Projects.ClassAttendanceTracker;
 
-// Import the visual library
+// Import libraries
 import javax.swing.*;
 import javax.swing.event.MouseInputAdapter;
 
-// Import the shape library
 import java.awt.*;
 
 public class Desk extends JPanel {

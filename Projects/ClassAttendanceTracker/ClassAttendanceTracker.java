@@ -6,19 +6,16 @@
 // Import the main package
 package Projects.ClassAttendanceTracker;
 
-// Import the visual library
+// Import libraries
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.event.MouseInputAdapter;
 
-// Import the shape library
 import java.awt.*;
 
-// Import event library
 import java.awt.event.*;
 import java.util.ArrayList;
 
-// Import Desk class
 import Projects.ClassAttendanceTracker.Desk;
 
 public class ClassAttendanceTracker extends MouseInputAdapter {
