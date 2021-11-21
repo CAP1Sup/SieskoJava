@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ASCIIArtII",
+            "request": "launch",
+            "mainClass": "ASCIIArtII",
+            "projectName": "SieskoJava_a764e23f"
+        },
+        {
+            "type": "java",
             "name": "Launch ArrayListLab2",
             "request": "launch",
             "mainClass": "Labs.ArrayLists.ArrayListLab2",
