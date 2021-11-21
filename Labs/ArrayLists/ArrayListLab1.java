@@ -10,17 +10,17 @@ package Labs.ArrayLists;
 import java.util.ArrayList;
 
 public class ArrayListLab1 {
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    // ArrayList for the multiples of 3
-    ArrayList<Integer> multiplesOf3 = new ArrayList<Integer>();
+        // ArrayList for the multiples of 3
+        ArrayList<Integer> multiplesOf3 = new ArrayList<Integer>();
 
-    // Loop through, adding multiples of 3
-    for (int i = 0; i < 3 * 100; i += 3) {
-      multiplesOf3.add(i);
+        // Loop through, adding multiples of 3
+        for (int i = 0; i < 3 * 100; i += 3) {
+            multiplesOf3.add(i);
+        }
+
+        // Print the ArrayList
+        System.out.println(multiplesOf3);
     }
-
-    // Print the ArrayList
-    System.out.println(multiplesOf3);
-  }
 }

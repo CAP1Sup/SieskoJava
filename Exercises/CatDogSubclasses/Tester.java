@@ -9,13 +9,13 @@ package Exercises.CatDogSubclasses;
 // Import both cat and dog classes
 
 public class Tester {
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    // Create the objects
-    Dog theDog = new Dog();
-    Cat theCat = new Cat();
+        // Create the objects
+        Dog theDog = new Dog();
+        Cat theCat = new Cat();
 
-    theDog.bark();
-    theCat.meow();
-  }
+        theDog.bark();
+        theCat.meow();
+    }
 }

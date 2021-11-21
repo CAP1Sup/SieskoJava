@@ -5,14 +5,14 @@
 package KeyWithMes.ForEachExample;
 
 public class ForEachExample {
-  public static void main(String[] args) {
-    int arr[] = {1, 2, 3};
-    int total = 0;
+    public static void main(String[] args) {
+        int arr[] = {1, 2, 3};
+        int total = 0;
 
-    for (int element : arr) {
-      total = total + element;
+        for (int element : arr) {
+            total = total + element;
+        }
+
+        System.out.println("Total: " + total);
     }
-
-    System.out.println("Total: " + total);
-  }
 }

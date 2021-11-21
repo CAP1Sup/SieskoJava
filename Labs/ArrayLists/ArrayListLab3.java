@@ -13,42 +13,42 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ArrayListLab3 {
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    // Create a new list
-    ArrayList<Integer> list = new ArrayList<Integer>(Arrays.asList(3, 8, 92, 4, 2, 17, 9));
+        // Create a new list
+        ArrayList<Integer> list = new ArrayList<Integer>(Arrays.asList(3, 8, 92, 4, 2, 17, 9));
 
-    // Create an ArrayListLab3 object (for sorting the list)
-    ArrayListLab3 sorter = new ArrayListLab3();
+        // Create an ArrayListLab3 object (for sorting the list)
+        ArrayListLab3 sorter = new ArrayListLab3();
 
-    // Sort the ArrayList, then print it
-    System.out.println(sorter.minToFront(list));
-  }
-
-  /**
-   * Returns an ArrayList with the minimum value of the ArrayList in the first index
-   *
-   * @param list The raw ArrayList to sort
-   * @return The sorted ArrayList
-   */
-  public ArrayList<Integer> minToFront(ArrayList<Integer> list) {
-
-    // Create a variable to store index of smallest value
-    int smallestValIndex = 0;
-
-    // Loop through the ArrayList
-    for (int i = 1; i < list.size(); i++) {
-      if (list.get(smallestValIndex) > list.get(i)) {
-        smallestValIndex = i;
-      }
+        // Sort the ArrayList, then print it
+        System.out.println(sorter.minToFront(list));
     }
 
-    // Pop the smallest value, the add it to the first element in the ArrayList
-    int val = list.get(smallestValIndex);
-    list.remove(smallestValIndex);
-    list.add(0, val);
+    /**
+     * Returns an ArrayList with the minimum value of the ArrayList in the first index
+     *
+     * @param list The raw ArrayList to sort
+     * @return The sorted ArrayList
+     */
+    public ArrayList<Integer> minToFront(ArrayList<Integer> list) {
 
-    // Return the sorted list
-    return list;
-  }
+        // Create a variable to store index of smallest value
+        int smallestValIndex = 0;
+
+        // Loop through the ArrayList
+        for (int i = 1; i < list.size(); i++) {
+            if (list.get(smallestValIndex) > list.get(i)) {
+                smallestValIndex = i;
+            }
+        }
+
+        // Pop the smallest value, the add it to the first element in the ArrayList
+        int val = list.get(smallestValIndex);
+        list.remove(smallestValIndex);
+        list.add(0, val);
+
+        // Return the sorted list
+        return list;
+    }
 }

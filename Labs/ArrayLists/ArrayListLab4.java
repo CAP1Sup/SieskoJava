@@ -19,26 +19,35 @@ import java.util.Arrays;
  */
 public class ArrayListLab4 {
 
-  /**
-   * Adds a String "****" in front of every String with a length of 4 or greater
-   *
-   * @param list The list to look through and add markers to
-   */
-  public void markLength4(ArrayList<String> list) {
-    for (int index = 0; index < list.size(); index++) {
-      if (list.get(index).length() >= 4) {
-        list.add(index, "****");
-        index++;
-      }
+    /**
+     * Adds a String "****" in front of every String with a length of 4 or greater
+     *
+     * @param list The list to look through and add markers to
+     */
+    public void markLength4(ArrayList<String> list) {
+        for (int index = 0; index < list.size(); index++) {
+            if (list.get(index).length() >= 4) {
+                list.add(index, "****");
+                index++;
+            }
+        }
     }
-  }
 
-  public static void main(String[] args) {
-    ArrayList<String> list =
-        new ArrayList<String>(
-            Arrays.asList("this", "is", "lots", "of", "fun", "for", "every", "Java", "programmer"));
-    ArrayListLab4 marker = new ArrayListLab4();
-    marker.markLength4(list);
-    System.out.println(list);
-  }
+    public static void main(String[] args) {
+        ArrayList<String> list =
+                new ArrayList<String>(
+                        Arrays.asList(
+                                "this",
+                                "is",
+                                "lots",
+                                "of",
+                                "fun",
+                                "for",
+                                "every",
+                                "Java",
+                                "programmer"));
+        ArrayListLab4 marker = new ArrayListLab4();
+        marker.markLength4(list);
+        System.out.println(list);
+    }
 }

@@ -8,50 +8,51 @@ package Projects.ClassAttendanceTracker;
 
 // Import libraries
 import java.awt.*;
+
 import javax.swing.*;
 
 public class Desk extends JPanel {
 
-  // Holds the preferred dimension
-  private Dimension preferredSize;
-  private int desiredX;
-  private int desiredY;
+    // Holds the preferred dimension
+    private Dimension preferredSize;
+    private int desiredX;
+    private int desiredY;
 
-  // Main constructor
-  Desk(int x, int y, int width, int height) {
-    preferredSize = new Dimension(width, height);
-    desiredX = x;
-    desiredY = y;
-  }
+    // Main constructor
+    Desk(int x, int y, int width, int height) {
+        preferredSize = new Dimension(width, height);
+        desiredX = x;
+        desiredY = y;
+    }
 
-  // Called when frame is drawn
-  @Override
-  public void paintComponent(Graphics g) {
-    super.paintComponent(g);
-    setBackground(Color.RED);
-    // g.setColor(Color.RED);
-    // g.drawRect(0, 0, (int)Math.round(preferredSize.getWidth()),
-    // (int)Math.round(preferredSize.getHeight()));
-  }
+    // Called when frame is drawn
+    @Override
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        setBackground(Color.RED);
+        // g.setColor(Color.RED);
+        // g.drawRect(0, 0, (int)Math.round(preferredSize.getWidth()),
+        // (int)Math.round(preferredSize.getHeight()));
+    }
 
-  // Set the preferred size
-  public void setPreferredSize(Dimension newSize) {
-    preferredSize = newSize;
-  }
+    // Set the preferred size
+    public void setPreferredSize(Dimension newSize) {
+        preferredSize = newSize;
+    }
 
-  // Get the preferred size
-  @Override
-  public Dimension getPreferredSize() {
-    return preferredSize;
-  }
+    // Get the preferred size
+    @Override
+    public Dimension getPreferredSize() {
+        return preferredSize;
+    }
 
-  // Get the X value
-  public int getDesiredX() {
-    return desiredX;
-  }
+    // Get the X value
+    public int getDesiredX() {
+        return desiredX;
+    }
 
-  // Get the Y value
-  public int getDesiredY() {
-    return desiredY;
-  }
+    // Get the Y value
+    public int getDesiredY() {
+        return desiredY;
+    }
 }

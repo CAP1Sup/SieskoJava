@@ -10,8 +10,8 @@ package Exercises.CatDogSubclasses;
 
 public class Cat extends Animal {
 
-  // Methods
-  void meow() {
-    System.out.println("Meow!");
-  }
+    // Methods
+    void meow() {
+        System.out.println("Meow!");
+    }
 }
