@@ -2,7 +2,6 @@
  * @author Christian Piper
  * @since 11/21/21
  */
-
 package Labs.Arrays.TwoDArrays;
 
 public class ASCIIArtII {

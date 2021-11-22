@@ -35,19 +35,19 @@ public class StringOpsTester {
         // call the compareTo method after the +
         System.out.println(
                 "The result when comparing the first name to the last name using Java's compareTo()"
-                    + " method is "
+                        + " method is "
                         + first.compareTo(last));
 
         // call the compareTo method after the +
         System.out.println(
                 "The result when comparing the last name to the first name using Java's compareTo()"
-                    + " method is "
+                        + " method is "
                         + last.compareTo(first));
 
         // call the compareTo method after the +
         System.out.println(
                 "The result when comparing the first name to the first name using Java's"
-                    + " compareTo() method is "
+                        + " compareTo() method is "
                         + first.compareTo(last));
     }
 }
