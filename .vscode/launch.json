@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Launch ASCIIArtII",
             "request": "launch",
+            "mainClass": "Labs.Arrays.TwoDArrays.ASCIIArtII",
+            "projectName": "SieskoJava_f9c31d6c"
+        },
+        {
+            "type": "java",
+            "name": "Launch ASCIIArtII",
+            "request": "launch",
             "mainClass": "ASCIIArtII",
             "projectName": "SieskoJava_a764e23f"
         },
