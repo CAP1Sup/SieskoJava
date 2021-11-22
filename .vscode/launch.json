@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ColorChooser",
+            "request": "launch",
+            "mainClass": "ColorChooser",
+            "projectName": "SieskoJava_f9c31d6c"
+        },
+        {
+            "type": "java",
             "name": "Launch ASCIIArtII",
             "request": "launch",
             "mainClass": "Labs.Arrays.TwoDArrays.ASCIIArtII",
