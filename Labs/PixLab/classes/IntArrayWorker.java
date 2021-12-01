@@ -74,4 +74,79 @@ public class IntArrayWorker {
             }
         }
     }
+
+
+    /**
+     * Gets the number of times a number shows up in the array
+     * @param number The number that should be counted
+     * @return The number of times the number appears in the array
+     */
+    public int getCount(int number) {
+
+        // Start the counter at 0
+        int count = 0;
+
+        // Loop through each row
+        for (int[] row : matrix) {
+
+            // Loop through each column
+            for (int element : row) {
+
+                // Check if the number is the same
+                if (element == number) {
+                    count++;
+                }
+            }
+        }
+
+        // Return the count
+        return count;
+    }
+
+
+    /**
+     * Gets the largest number in the array
+     * @return The largest number in the array
+     */
+    public int getLargest() {
+
+        // Set the largest to the first value in the array
+        int largest = matrix[0][0];
+
+        // Loop through each row
+        for (int[] row : matrix) {
+
+            // Loop through each column
+            for (int element : row) {
+
+                // Check if the number is larger than the largest
+                if (element > largest) {
+                    largest = element;
+                }
+            }
+        }
+
+        // Return the largest number
+        return largest;
+    }
+
+
+    /**
+     * Gets the total of a column in the array
+     * @param column The column to be totalled
+     * @return The total of the column
+     */
+    public int getColTotal(int column) {
+
+        // Start the total at 0
+        int total = 0;
+
+        // Loop through each row, adding each element to the total
+        for (int[] row : matrix) {
+            total += row[column];
+        }
+
+        // Return the total
+        return total;
+    }
 }

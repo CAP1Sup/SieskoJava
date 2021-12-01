@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch IntArrayWorkerTester",
+            "request": "launch",
+            "mainClass": "IntArrayWorkerTester",
+            "projectName": "SieskoJava_f9c31d6c"
+        },
+        {
+            "type": "java",
             "name": "Launch PictureExplorer",
             "request": "launch",
             "mainClass": "PictureExplorer",
