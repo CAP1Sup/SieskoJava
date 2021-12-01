@@ -49,7 +49,7 @@ public class IntArrayWorkerTester {
     /** Method to test getLargest */
     public static void testGetLargest() { // test when largest is last
         IntArrayWorker worker = new IntArrayWorker();
-        int [][] nums2 = {{1, 2, 3}, {4, 5, 6}};
+        int[][] nums2 = {{1, 2, 3}, {4, 5, 6}};
         worker.setMatrix(nums2);
         int largest = worker.getLargest();
         System.out.println("Largest should be 6 and is " + largest);
@@ -73,7 +73,7 @@ public class IntArrayWorkerTester {
     /** Method to test getColTotal */
     public static void testGetColTotal() {
         IntArrayWorker worker = new IntArrayWorker();
-        int [][] nums2 = {{1, 2, 3}, {4, 5, 6}};
+        int[][] nums2 = {{1, 2, 3}, {4, 5, 6}};
         worker.setMatrix(nums2);
         int total = worker.getColTotal(0);
         System.out.println("Total for column 0 should be 5 and is " + total);

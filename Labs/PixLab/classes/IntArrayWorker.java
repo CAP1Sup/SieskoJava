@@ -75,9 +75,9 @@ public class IntArrayWorker {
         }
     }
 
-
     /**
      * Gets the number of times a number shows up in the array
+     *
      * @param number The number that should be counted
      * @return The number of times the number appears in the array
      */
@@ -103,9 +103,9 @@ public class IntArrayWorker {
         return count;
     }
 
-
     /**
      * Gets the largest number in the array
+     *
      * @return The largest number in the array
      */
     public int getLargest() {
@@ -130,9 +130,9 @@ public class IntArrayWorker {
         return largest;
     }
 
-
     /**
      * Gets the total of a column in the array
+     *
      * @param column The column to be totalled
      * @return The total of the column
      */
