@@ -7,15 +7,42 @@
 public class PictureTester {
     /** Method to test zeroBlue */
     public static void testZeroBlue() {
-        Picture beach = new Picture("beach.jpg");
-        beach.explore();
+        Picture beach = new Picture("Labs/PixLab/images/beach.jpg");
         beach.zeroBlue();
         beach.explore();
     }
 
+    /** Method to test keepOnlyBlue */
+    public static void testKeepOnlyBlue() {
+        Picture beach = new Picture("Labs/PixLab/images/beach.jpg");
+        beach.keepOnlyBlue();
+        beach.explore();
+    }
+
+    /** Method to test zeroBlue */
+    public static void testNegate() {
+        Picture beach = new Picture("Labs/PixLab/images/beach.jpg");
+        beach.negate();
+        beach.explore();
+    }
+
+    /** Method to test zeroBlue */
+    public static void testGrayscale() {
+        Picture beach = new Picture("Labs/PixLab/images/beach.jpg");
+        beach.grayscale();
+        beach.explore();
+    }
+
+    /** Method to test zeroBlue */
+    public static void testFixUnderwater() {
+        Picture water = new Picture("Labs/PixLab/images/water.jpg");
+        water.fixUnderwater();
+        water.explore();
+    }
+
     /** Method to test mirrorVertical */
     public static void testMirrorVertical() {
-        Picture caterpillar = new Picture("caterpillar.jpg");
+        Picture caterpillar = new Picture("Labs/PixLab/images/caterpillar.jpg");
         caterpillar.explore();
         caterpillar.mirrorVertical();
         caterpillar.explore();
@@ -23,7 +50,7 @@ public class PictureTester {
 
     /** Method to test mirrorTemple */
     public static void testMirrorTemple() {
-        Picture temple = new Picture("temple.jpg");
+        Picture temple = new Picture("Labs/PixLab/images/temple.jpg");
         temple.explore();
         temple.mirrorTemple();
         temple.explore();
@@ -31,14 +58,14 @@ public class PictureTester {
 
     /** Method to test the collage method */
     public static void testCollage() {
-        Picture canvas = new Picture("640x480.jpg");
+        Picture canvas = new Picture("Labs/PixLab/images/640x480.jpg");
         canvas.createCollage();
         canvas.explore();
     }
 
     /** Method to test edgeDetection */
     public static void testEdgeDetection() {
-        Picture swan = new Picture("swan.jpg");
+        Picture swan = new Picture("Labs/PixLab/images/swan.jpg");
         swan.edgeDetection(10);
         swan.explore();
     }
@@ -49,12 +76,13 @@ public class PictureTester {
         // and comment out the ones you don't want
         // to run
         testZeroBlue();
-        // testKeepOnlyBlue();
+        testKeepOnlyBlue();
         // testKeepOnlyRed();
         // testKeepOnlyGreen();
-        // testNegate();
-        // testGrayscale();
-        // testFixUnderwater();
+        testNegate();
+        testGrayscale();
+        new Picture("Labs/PixLab/images/water.jpg").explore();
+        testFixUnderwater();
         // testMirrorVertical();
         // testMirrorTemple();
         // testMirrorArms();

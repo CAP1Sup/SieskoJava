@@ -92,6 +92,68 @@ public class Picture extends SimplePicture {
     }
 
     /**
+     * Zeroes the red and green values, leaving only the blue values for the pixels
+     */
+    public void keepOnlyBlue() {
+        Pixel[][] pixels = this.getPixels2D();
+        for (Pixel[] rowArray : pixels) {
+            for (Pixel pixelObj : rowArray) {
+                pixelObj.setRed(0);
+                pixelObj.setGreen(0);
+            }
+        }
+    }
+
+
+    /**
+     * Negates all pixel colors, inverting the image
+     */
+    public void negate() {
+        Pixel[][] pixels = this.getPixels2D();
+        for (Pixel[] rowArray : pixels) {
+            for (Pixel pixelObj : rowArray) {
+                pixelObj.setRed(255 - pixelObj.getRed());
+                pixelObj.setGreen(255 - pixelObj.getGreen());
+                pixelObj.setBlue(255 - pixelObj.getBlue());
+            }
+        }
+    }
+
+
+    /**
+     * Converts the image to grayscale
+     */
+    public void grayscale() {
+        Pixel[][] pixels = this.getPixels2D();
+        for (Pixel[] rowArray : pixels) {
+            for (Pixel pixelObj : rowArray) {
+                int value = (pixelObj.getRed() + pixelObj.getGreen() + pixelObj.getBlue()) / 3;
+                pixelObj.setRed(value);
+                pixelObj.setGreen(value);
+                pixelObj.setBlue(value);
+            }
+        }
+    }
+
+
+    /**
+     * Adjusts an image so that objects in the water are more clearly shown
+     */
+    public void fixUnderwater() {
+        Pixel[][] pixels = this.getPixels2D();
+        for (Pixel[] rowArray : pixels) {
+            for (Pixel pixelObj : rowArray) {
+                if (pixelObj.getRed() > 20) {
+                    pixelObj.setRed(0);
+                    pixelObj.setGreen(0);
+                    pixelObj.setBlue(0);
+                }
+            }
+        }
+    }
+
+
+    /**
      * Method that mirrors the picture around a vertical mirror in the center of the picture from
      * left to right
      */
