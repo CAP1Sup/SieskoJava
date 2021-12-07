@@ -177,7 +177,6 @@ public class Picture extends SimplePicture {
         }
     }
 
-
     /**
      * Method that mirrors the picture around a vertical mirror in the center of the picture from
      * right to left
@@ -195,7 +194,6 @@ public class Picture extends SimplePicture {
             }
         }
     }
-
 
     /** Mirror just part of a picture of a temple */
     public void mirrorTemple() {
