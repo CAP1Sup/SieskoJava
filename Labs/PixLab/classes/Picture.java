@@ -195,7 +195,6 @@ public class Picture extends SimplePicture {
         }
     }
 
-
     /**
      * Method that mirrors the picture around a horizontal mirror in the center of the picture from
      * top to bottom
@@ -214,10 +213,7 @@ public class Picture extends SimplePicture {
         }
     }
 
-
-    /**
-     * Method that mirrors the picture around a diagonal mirror around the line y=x
-     */
+    /** Method that mirrors the picture around a diagonal mirror around the line y=x */
     public void mirrorDiagonal() {
         Pixel[][] pixels = this.getPixels2D();
         Pixel oldPixel = null;
@@ -230,7 +226,6 @@ public class Picture extends SimplePicture {
             }
         }
     }
-
 
     /** Mirror just part of a picture of a temple */
     public void mirrorTemple() {
