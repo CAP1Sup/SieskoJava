@@ -19,21 +19,21 @@ public class PictureTester {
         beach.explore();
     }
 
-    /** Method to test zeroBlue */
+    /** Method to test negate */
     public static void testNegate() {
         Picture beach = new Picture("Labs/PixLab/images/beach.jpg");
         beach.negate();
         beach.explore();
     }
 
-    /** Method to test zeroBlue */
+    /** Method to test grayscale */
     public static void testGrayscale() {
         Picture beach = new Picture("Labs/PixLab/images/beach.jpg");
         beach.grayscale();
         beach.explore();
     }
 
-    /** Method to test zeroBlue */
+    /** Method to test fixUnderwater */
     public static void testFixUnderwater() {
         Picture water = new Picture("Labs/PixLab/images/water.jpg");
         water.fixUnderwater();
@@ -46,6 +46,13 @@ public class PictureTester {
         caterpillar.explore();
         caterpillar.mirrorVertical();
         caterpillar.explore();
+    }
+
+    /** Method to test mirrorDiagonal */
+    public static void testMirrorDiagonal() {
+        Picture beach = new Picture("Labs/PixLab/images/beach.jpg");
+        beach.mirrorDiagonal();
+        beach.explore();
     }
 
     /** Method to test mirrorTemple */
@@ -83,6 +90,7 @@ public class PictureTester {
         testGrayscale();
         new Picture("Labs/PixLab/images/water.jpg").explore();
         testFixUnderwater();
+        testMirrorDiagonal();
         // testMirrorVertical();
         // testMirrorTemple();
         // testMirrorArms();
