@@ -94,15 +94,15 @@ public class PictureTester {
         // uncomment a call here to run a test
         // and comment out the ones you don't want
         // to run
-        //testZeroBlue();
-        //testKeepOnlyBlue();
+        // testZeroBlue();
+        // testKeepOnlyBlue();
         // testKeepOnlyRed();
         // testKeepOnlyGreen();
-        //testNegate();
-        //testGrayscale();
-        //new Picture("Labs/PixLab/images/water.jpg").explore();
-        //testFixUnderwater();
-        //testMirrorDiagonal();
+        // testNegate();
+        // testGrayscale();
+        // new Picture("Labs/PixLab/images/water.jpg").explore();
+        // testFixUnderwater();
+        // testMirrorDiagonal();
         // testMirrorVertical();
         // testMirrorTemple();
         testMirrorArms();
