@@ -276,6 +276,28 @@ public class Picture extends SimplePicture {
     }
 
 
+    /**
+     * Copy from a from picture to a destination picture
+     *
+     * @param fromPic the picture to copy from
+     * @param dStartPt the start point to copy to
+     * @param fStartPt the start point to copy from
+     * @param fEndPt the end point to copy from
+     */
+    public void copy(Picture fromPic, int[] dStartPt, int[] fStartPt, int[] fEndPt) {
+
+        // Get the arrays for the pictures to be used
+        Pixel[][] toPixels = this.getPixels2D();
+        Pixel[][] fromPixels = fromPic.getPixels2D();
+
+        // Start the copying process
+        for (int rowCounter = 0; rowCounter < (fEndPt[0] - fStartPt[0]) && dStartPt[0] + rowCounter < toPixels.length && fStartPt[0] + rowCounter < fromPixels.length; rowCounter++) {
+            for (int colCounter = 0; colCounter < (fEndPt[1] - fStartPt[0]) && dStartPt[1] + colCounter < toPixels[0].length && fStartPt[1] + colCounter < fromPixels[0].length; colCounter++) {
+                toPixels[dStartPt[0] + rowCounter][dStartPt[1] + colCounter].setColor(fromPixels[fStartPt[0] + rowCounter][fStartPt[1] + colCounter].getColor());
+            }
+        }
+    }
+
     public void mirrorSection(int[] oldPixelStartPt, int[] oldPixelEndPt, int[] newPixelStartPt) {
         Pixel[][] pixels = this.getPixels2D();
         for (int rowCount = 0; rowCount <= oldPixelEndPt[0] - oldPixelStartPt[0]; rowCount++) {
@@ -309,6 +331,40 @@ public class Picture extends SimplePicture {
         this.copy(flower2, 500, 0);
         this.mirrorVertical();
         this.write("collage.jpg");
+    }
+
+    /** Method to create a 2nd collage of several pictures */
+    public void createCollage2() {
+        Picture flower1 = new Picture("Labs/PixLab/images/flower1.jpg");
+        Picture flower2 = new Picture("Labs/PixLab/images/flower2.jpg");
+        Picture flower3 = new Picture("Labs/PixLab/images/flower3.jpg");
+        Picture smiley = new Picture("Labs/PixLab/images/smiley.jpg");
+
+        Picture[] pics = new Picture[]{flower1, flower2, flower3, smiley};
+
+        for(int index = 0; index < pics.length; index++) {
+            Picture zeroedPic = new Picture(pics[index]);
+            zeroedPic.zeroBlue();
+
+            Picture grayscale = new Picture(pics[index]);
+            grayscale.grayscale();
+
+            Picture vMirrored = new Picture(pics[index]);
+            vMirrored.mirrorVertical();
+
+            Picture hMirrored = new Picture(pics[index]);
+            hMirrored.mirrorHorizontal();
+
+            Picture blue = new Picture(pics[index]);
+            blue.keepOnlyBlue();
+
+            this.copy(pics[index], new int[] {index * 100, 0  }, new int[]{0, 0}, new int[]{100, 100});
+            this.copy(zeroedPic,   new int[] {index * 100, 100}, new int[]{0, 0}, new int[]{100, 100});
+            this.copy(grayscale,   new int[] {index * 100, 200}, new int[]{0, 0}, new int[]{100, 100});
+            this.copy(vMirrored,   new int[] {index * 100, 300}, new int[]{0, 0}, new int[]{100, 100});
+            this.copy(hMirrored,   new int[] {index * 100, 400}, new int[]{0, 0}, new int[]{100, 100});
+            this.copy(blue,        new int[] {index * 100, 500}, new int[]{0, 0}, new int[]{100, 100});
+        }
     }
 
     /**
