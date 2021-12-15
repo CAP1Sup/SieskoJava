@@ -302,19 +302,20 @@ public class Picture extends SimplePicture {
         Pixel[][] pixels = this.getPixels2D();
         for (int rowCount = 0; rowCount <= oldPixelEndPt[0] - oldPixelStartPt[0]; rowCount++) {
             for (int colCount = 0; colCount <= oldPixelEndPt[1] - oldPixelStartPt[1]; colCount++) {
-                pixels[newPixelStartPt[0] + rowCount][newPixelStartPt[1] + colCount].setColor(pixels[oldPixelStartPt[0] + rowCount][oldPixelStartPt[1] + colCount].getColor());
+                pixels[newPixelStartPt[0] + rowCount][newPixelStartPt[1] + colCount].setColor(
+                        pixels[oldPixelStartPt[0] + rowCount][oldPixelStartPt[1] + colCount]
+                                .getColor());
             }
         }
     }
 
-
     public void mirrorArms() {
-        mirrorSection(new int[]{156, 103}, new int[]{193, 169}, new int[]{230, 96});
-        mirrorSection(new int[]{170, 240}, new int[]{198, 294}, new int[]{245, 245});
+        mirrorSection(new int[] {156, 103}, new int[] {193, 169}, new int[] {230, 96});
+        mirrorSection(new int[] {170, 240}, new int[] {198, 294}, new int[] {245, 245});
     }
 
     public void mirrorGull() {
-        mirrorSection(new int[]{233, 232}, new int[]{334, 346}, new int[]{250, 431});
+        mirrorSection(new int[] {233, 232}, new int[] {334, 346}, new int[] {250, 431});
     }
 
     /** Method to create a collage of several pictures */
