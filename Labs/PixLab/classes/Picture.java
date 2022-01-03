@@ -275,7 +275,6 @@ public class Picture extends SimplePicture {
         }
     }
 
-
     /**
      * Copy from a from picture to a destination picture
      *
@@ -291,9 +290,18 @@ public class Picture extends SimplePicture {
         Pixel[][] fromPixels = fromPic.getPixels2D();
 
         // Start the copying process
-        for (int rowCounter = 0; rowCounter < (fEndPt[0] - fStartPt[0]) && dStartPt[0] + rowCounter < toPixels.length && fStartPt[0] + rowCounter < fromPixels.length; rowCounter++) {
-            for (int colCounter = 0; colCounter < (fEndPt[1] - fStartPt[0]) && dStartPt[1] + colCounter < toPixels[0].length && fStartPt[1] + colCounter < fromPixels[0].length; colCounter++) {
-                toPixels[dStartPt[0] + rowCounter][dStartPt[1] + colCounter].setColor(fromPixels[fStartPt[0] + rowCounter][fStartPt[1] + colCounter].getColor());
+        for (int rowCounter = 0;
+                rowCounter < (fEndPt[0] - fStartPt[0])
+                        && dStartPt[0] + rowCounter < toPixels.length
+                        && fStartPt[0] + rowCounter < fromPixels.length;
+                rowCounter++) {
+            for (int colCounter = 0;
+                    colCounter < (fEndPt[1] - fStartPt[0])
+                            && dStartPt[1] + colCounter < toPixels[0].length
+                            && fStartPt[1] + colCounter < fromPixels[0].length;
+                    colCounter++) {
+                toPixels[dStartPt[0] + rowCounter][dStartPt[1] + colCounter].setColor(
+                        fromPixels[fStartPt[0] + rowCounter][fStartPt[1] + colCounter].getColor());
             }
         }
     }
@@ -341,9 +349,9 @@ public class Picture extends SimplePicture {
         Picture flower3 = new Picture("Labs/PixLab/images/flower3.jpg");
         Picture smiley = new Picture("Labs/PixLab/images/smiley.jpg");
 
-        Picture[] pics = new Picture[]{flower1, flower2, flower3, smiley};
+        Picture[] pics = new Picture[] {flower1, flower2, flower3, smiley};
 
-        for(int index = 0; index < pics.length; index++) {
+        for (int index = 0; index < pics.length; index++) {
             Picture zeroedPic = new Picture(pics[index]);
             zeroedPic.zeroBlue();
 
@@ -359,12 +367,32 @@ public class Picture extends SimplePicture {
             Picture blue = new Picture(pics[index]);
             blue.keepOnlyBlue();
 
-            this.copy(pics[index], new int[] {index * 100, 0  }, new int[]{0, 0}, new int[]{100, 100});
-            this.copy(zeroedPic,   new int[] {index * 100, 100}, new int[]{0, 0}, new int[]{100, 100});
-            this.copy(grayscale,   new int[] {index * 100, 200}, new int[]{0, 0}, new int[]{100, 100});
-            this.copy(vMirrored,   new int[] {index * 100, 300}, new int[]{0, 0}, new int[]{100, 100});
-            this.copy(hMirrored,   new int[] {index * 100, 400}, new int[]{0, 0}, new int[]{100, 100});
-            this.copy(blue,        new int[] {index * 100, 500}, new int[]{0, 0}, new int[]{100, 100});
+            this.copy(
+                    pics[index],
+                    new int[] {index * 100, 0},
+                    new int[] {0, 0},
+                    new int[] {100, 100});
+            this.copy(
+                    zeroedPic,
+                    new int[] {index * 100, 100},
+                    new int[] {0, 0},
+                    new int[] {100, 100});
+            this.copy(
+                    grayscale,
+                    new int[] {index * 100, 200},
+                    new int[] {0, 0},
+                    new int[] {100, 100});
+            this.copy(
+                    vMirrored,
+                    new int[] {index * 100, 300},
+                    new int[] {0, 0},
+                    new int[] {100, 100});
+            this.copy(
+                    hMirrored,
+                    new int[] {index * 100, 400},
+                    new int[] {0, 0},
+                    new int[] {100, 100});
+            this.copy(blue, new int[] {index * 100, 500}, new int[] {0, 0}, new int[] {100, 100});
         }
     }
 
