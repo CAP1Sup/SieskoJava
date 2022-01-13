@@ -4,7 +4,7 @@
  */
 
 // Import package
-package Exercises.CatDogSubclasses;
+package CatDogSubclasses;
 
 // Import the animal class
 

@@ -2,7 +2,7 @@
  * @author Christian Piper
  * @since 9/24/21
  */
-package Exercises;
+
 
 public class TimeClass {
     private int hrs, min, sec;
