@@ -5,12 +5,10 @@ public class Test {
         object.bbb("January", 4);
     }
 
-	public void bbb(String s, int p)
-	{
-        if (p >= 0)
-	  {
-           System.out.print(s.substring(p,p+1));
-           bbb(s,p-1);
-	  }
-	}
+    public void bbb(String s, int p) {
+        if (p >= 0) {
+            System.out.print(s.substring(p, p + 1));
+            bbb(s, p - 1);
+        }
+    }
 }

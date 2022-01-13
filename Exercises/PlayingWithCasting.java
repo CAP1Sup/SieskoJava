@@ -2,8 +2,6 @@
  * @author Christian Piper
  * @since 9/16/21
  */
-
-
 public class PlayingWithCasting {
 
     public static void main(String[] args) {

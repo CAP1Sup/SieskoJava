@@ -1,8 +1,6 @@
 // Christian Piper
 // 9/10/21
 
-
-
 public class StringPrints {
 
     static String one = "abcdefghijklm";

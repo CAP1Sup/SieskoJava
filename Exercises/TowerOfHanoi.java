@@ -22,12 +22,17 @@ public class TowerOfHanoi {
 
         // Check if we only need to move a single ring
         if (rings == 1) {
-            System.out.println("Moving disk " + move(startPeg, endPeg) + " from peg " + (startPeg + 1) + " to peg " + (endPeg + 1));
-        }
-        else {
-            moveTower(rings-1, startPeg, endPeg, auxPeg);
+            System.out.println(
+                    "Moving disk "
+                            + move(startPeg, endPeg)
+                            + " from peg "
+                            + (startPeg + 1)
+                            + " to peg "
+                            + (endPeg + 1));
+        } else {
+            moveTower(rings - 1, startPeg, endPeg, auxPeg);
             moveTower(1, startPeg, auxPeg, endPeg);
-            moveTower(rings-1, auxPeg, startPeg, endPeg);
+            moveTower(rings - 1, auxPeg, startPeg, endPeg);
         }
     }
 
@@ -37,16 +42,14 @@ public class TowerOfHanoi {
         int fromRow = findTopRow(fromColumn);
         int toRow = findTopRow(toColumn) - 1;
 
-        //if (toRow < 0) {
-            // Too many disks stacked, this is illegal
-        //}
+        // if (toRow < 0) {
+        // Too many disks stacked, this is illegal
+        // }
         if (fromRow >= disks.length) {
             System.out.println("Illegal move, no disk to move!");
-        }
-        else if (!checkMove(fromRow, fromColumn, toRow, toColumn)) {
+        } else if (!checkMove(fromRow, fromColumn, toRow, toColumn)) {
             System.out.println("Illegal move, cannot stack lower value disk!");
-        }
-        else {
+        } else {
 
             // Move the disk over
             disks[toRow][toColumn] = disks[fromRow][fromColumn];
@@ -80,17 +83,14 @@ public class TowerOfHanoi {
         if (toRow >= disks.length) {
             System.out.println("Illegal row!");
             return false;
-        }
-        else if (toRow == disks.length - 1) {
+        } else if (toRow == disks.length - 1) {
             // No need to check this one, there is no ring below
             return true;
-        }
-        else {
+        } else {
             if (disks[fromRow][fromColumn] < disks[toRow + 1][toColumn]) {
 
                 return true;
-            }
-            else {
+            } else {
                 // The disk below is smaller
                 System.out.println("Illegal move, disk on top is smaller!");
                 return false;

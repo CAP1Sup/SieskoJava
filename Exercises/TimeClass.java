@@ -2,8 +2,6 @@
  * @author Christian Piper
  * @since 9/24/21
  */
-
-
 public class TimeClass {
     private int hrs, min, sec;
 
