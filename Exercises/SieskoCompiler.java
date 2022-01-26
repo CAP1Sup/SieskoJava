@@ -2,8 +2,6 @@
  * @author Christian Piper
  * @since 10/19/21
  */
-
-
 import java.awt.*;
 import java.awt.event.*;
 

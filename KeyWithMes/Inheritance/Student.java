@@ -2,8 +2,6 @@
  * @author Christian Piper (@CAP1Sup)
  * @since 1/26/22
  */
-
-
 class Person {
     private String name;
 
