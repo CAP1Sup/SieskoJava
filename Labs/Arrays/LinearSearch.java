@@ -2,7 +2,7 @@
  * @author Christian Piper
  * @since 10/4/21
  */
-package Labs.Arrays;
+package Arrays;
 
 public class LinearSearch {
     private int[] ssNums;

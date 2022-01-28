@@ -7,7 +7,7 @@
  *     and you make this call: minToFront(list); it should store the following values after the
  *     call: {2, 3, 8, 92, 4, 17, 9} You may assume that the list stores at least one value.
  */
-package Labs.ArrayLists;
+package ArrayLists;
 
 import java.util.ArrayList;
 import java.util.Arrays;

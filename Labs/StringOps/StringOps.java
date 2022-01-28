@@ -1,4 +1,4 @@
-package Labs.StringOps;
+package StringOps;
 
 public class StringOps {
     // Write a static method called awesomeness that takes a String called name as its formal

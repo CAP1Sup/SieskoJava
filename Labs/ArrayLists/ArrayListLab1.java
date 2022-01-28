@@ -5,7 +5,7 @@
  *     first 100 multiples of 3 starting with 0. Upon completing this ArrayList, have the computer
  *     print the contents of the ArrayList. Use eclipse to code and test the program.
  */
-package Labs.ArrayLists;
+package ArrayLists;
 
 import java.util.ArrayList;
 

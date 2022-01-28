@@ -1,4 +1,4 @@
-package Labs.StringOps;
+package StringOps;
 
 public class StringOpsTester {
 

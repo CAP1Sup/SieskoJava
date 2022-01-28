@@ -4,7 +4,7 @@
  *     <p>Modify the program written for “Make Number List” to remove even multiples of 3 from the
  *     arraylist and display the arraylist to the screen,
  */
-package Labs.ArrayLists;
+package ArrayLists;
 
 import java.util.ArrayList;
 

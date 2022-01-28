@@ -2,7 +2,7 @@
  * @author Christian Piper
  * @since 11/5/21
  */
-package Labs.ArrayLists;
+package ArrayLists;
 
 import java.util.ArrayList;
 import java.util.Arrays;
