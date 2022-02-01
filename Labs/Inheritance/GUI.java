@@ -6,7 +6,6 @@ import java.awt.event.*;
 import java.util.ArrayList;
 
 import javax.swing.*;
-import javax.swing.event.MouseInputAdapter;
 
 public class GUI extends JFrame implements ActionListener {
 
@@ -58,7 +57,8 @@ public class GUI extends JFrame implements ActionListener {
 
     GUI() {
         // Get the size of the computer window
-        Rectangle screenRect = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
+        Rectangle screenRect =
+                GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
         screenSize = new Dimension((int) screenRect.getWidth(), (int) screenRect.getHeight());
 
         // Initialize the desk array
@@ -143,16 +143,22 @@ public class GUI extends JFrame implements ActionListener {
         frame.setTitle("Student Teacher Database");
 
         // Set the positions of the buttons
-        layout.putConstraint(SpringLayout.NORTH, usernameInputlabel, 10, SpringLayout.NORTH, window);
-        layout.putConstraint(SpringLayout.NORTH, usernameText,       5, SpringLayout.SOUTH, usernameInputlabel);
-        layout.putConstraint(SpringLayout.WEST,  usernameText,       0, SpringLayout.WEST, usernameInputlabel);
-        layout.putConstraint(SpringLayout.NORTH, passwordInputlabel, 10, SpringLayout.SOUTH, usernameText);
-        layout.putConstraint(SpringLayout.WEST,  passwordInputlabel, 0, SpringLayout.WEST, usernameText);
-        layout.putConstraint(SpringLayout.NORTH, passwordText,       5, SpringLayout.SOUTH, passwordInputlabel);
-        layout.putConstraint(SpringLayout.NORTH, exitButton,   20,  SpringLayout.SOUTH, passwordText);
-        layout.putConstraint(SpringLayout.NORTH, loginButton,  20, SpringLayout.SOUTH, passwordText);
-        layout.putConstraint(SpringLayout.WEST, loginButton,   20, SpringLayout.WEST, window);
-        layout.putConstraint(SpringLayout.WEST,  exitButton,   0,  SpringLayout.EAST, loginButton);
+        layout.putConstraint(
+                SpringLayout.NORTH, usernameInputlabel, 10, SpringLayout.NORTH, window);
+        layout.putConstraint(
+                SpringLayout.NORTH, usernameText, 5, SpringLayout.SOUTH, usernameInputlabel);
+        layout.putConstraint(
+                SpringLayout.WEST, usernameText, 0, SpringLayout.WEST, usernameInputlabel);
+        layout.putConstraint(
+                SpringLayout.NORTH, passwordInputlabel, 10, SpringLayout.SOUTH, usernameText);
+        layout.putConstraint(
+                SpringLayout.WEST, passwordInputlabel, 0, SpringLayout.WEST, usernameText);
+        layout.putConstraint(
+                SpringLayout.NORTH, passwordText, 5, SpringLayout.SOUTH, passwordInputlabel);
+        layout.putConstraint(SpringLayout.NORTH, exitButton, 20, SpringLayout.SOUTH, passwordText);
+        layout.putConstraint(SpringLayout.NORTH, loginButton, 20, SpringLayout.SOUTH, passwordText);
+        layout.putConstraint(SpringLayout.WEST, loginButton, 20, SpringLayout.WEST, window);
+        layout.putConstraint(SpringLayout.WEST, exitButton, 0, SpringLayout.EAST, loginButton);
 
         // Pack the frame
         frame.pack();
@@ -166,8 +172,7 @@ public class GUI extends JFrame implements ActionListener {
 
     // Process button clicks
     public void actionPerformed(ActionEvent ae) {
-        if (ae.getSource() == loginButton)
-        {
+        if (ae.getSource() == loginButton) {
             window.remove(loginButton);
             window.remove(exitButton);
             window.remove(usernameInputlabel);
@@ -179,23 +184,19 @@ public class GUI extends JFrame implements ActionListener {
             window.add(addStudentButton);
 
             // ! WRITE THE CHECK HERE
-            JOptionPane.showMessageDialog(window, "Check not written", "Login status", JOptionPane.INFORMATION_MESSAGE);
-        }
-        else if (ae.getSource() == exitButton) {
+            JOptionPane.showMessageDialog(
+                    window, "Check not written", "Login status", JOptionPane.INFORMATION_MESSAGE);
+        } else if (ae.getSource() == exitButton) {
             System.exit(0);
-        }
-        else if (ae.getSource() == addTeacherButton) {
+        } else if (ae.getSource() == addTeacherButton) {
             window.remove(addTeacherButton);
             window.remove(addStudentButton);
-        }
-        else if (ae.getSource() == addStudentButton) {
+        } else if (ae.getSource() == addStudentButton) {
             window.remove(addTeacherButton);
             window.remove(addStudentButton);
-        }
-        else if (ae.getSource() == submitButtonTeacher) {
+        } else if (ae.getSource() == submitButtonTeacher) {
             window.remove(submitButtonTeacher);
-        }
-        else if (ae.getSource() == submitButtonStudent) {
+        } else if (ae.getSource() == submitButtonStudent) {
             window.remove(submitButtonStudent);
         }
     }
