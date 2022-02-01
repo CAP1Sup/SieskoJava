@@ -11,35 +11,20 @@ public class GUI extends JFrame implements ActionListener {
 
     private static JFrame frame;
     private static Container window;
-    private static SpringLayout layout;
+
+    // Layouts
+    private static SpringLayout loginLayout;
+    private static SpringLayout dataExplorerLayout;
 
     // Text fields
     private static JTextField usernameText;
     private static JPasswordField passwordText;
-    private static JTextField nameText;
-    private static JTextField yearOfBirthText;
-    private static JTextField streetText;
-    private static JTextField cityText;
-    private static JTextField stateText;
-    private static JTextField zipText;
-    private static JTextField idText;
-    private static JTextField majorText;
-    private static JTextField gpaText;
-    private static JTextField salaryText;
 
     // Labels
-    private static JLabel usernameInputlabel;
-    private static JLabel passwordInputlabel;
-    private static JLabel nameInputlabel;
-    private static JLabel streetInputlabel;
-    private static JLabel cityInputlabel;
-    private static JLabel stateInputLabel;
-    private static JLabel zipInputLabel;
-    private static JLabel birthYearInputLabel;
-    private static JLabel idInputlabel;
-    private static JLabel studentMajorLabel;
-    private static JLabel studentGPALabel;
-    private static JLabel teacherSalaryLabel;
+    private static JLabel usernameInputLabel;
+    private static JLabel passwordInputLabel;
+    private static JLabel studentDataLabel;
+    private static JLabel teacherDataLabel;
 
     // Buttons
     private static JButton loginButton;
@@ -70,10 +55,6 @@ public class GUI extends JFrame implements ActionListener {
         // Get the container
         window = frame.getContentPane();
 
-        // Set the layout
-        layout = new SpringLayout();
-        window.setLayout(layout);
-
         // Create button instances
         loginButton = new JButton("Login");
         exitButton = new JButton("Exit");
@@ -83,18 +64,10 @@ public class GUI extends JFrame implements ActionListener {
         submitButtonStudent = new JButton("Ok");
 
         // Instantiate all of the labels
-        usernameInputlabel = new JLabel("Username: ");
-        passwordInputlabel = new JLabel("Password: ");
-        nameInputlabel = new JLabel("Name: ");
-        streetInputlabel = new JLabel("Street: ");
-        cityInputlabel = new JLabel("City: ");
-        stateInputLabel = new JLabel("State: ");
-        zipInputLabel = new JLabel("Zip: ");
-        birthYearInputLabel = new JLabel("Year of Birth: ");
-        idInputlabel = new JLabel("ID: ");
-        studentMajorLabel = new JLabel("Major: ");
-        studentGPALabel = new JLabel("GPA: ");
-        teacherSalaryLabel = new JLabel("Salary: ");
+        usernameInputLabel = new JLabel("Username: ");
+        passwordInputLabel = new JLabel("Password: ");
+        studentDataLabel = new JLabel("Student(s): ");
+        teacherDataLabel = new JLabel("Teacher(s): ");
 
         // Attach the buttons to the actionListener
         loginButton.addActionListener(this);
@@ -108,23 +81,12 @@ public class GUI extends JFrame implements ActionListener {
         usernameText = new JTextField(16);
         passwordText = new JPasswordField(16);
 
-        nameText = new JTextField(30);
-        yearOfBirthText = new JTextField(30);
-        streetText = new JTextField(30);
-        cityText = new JTextField(30);
-        stateText = new JTextField(30);
-        zipText = new JTextField(30);
-        idText = new JTextField(30);
-        majorText = new JTextField(30);
-        gpaText = new JTextField(30);
-        salaryText = new JTextField(30);
-
         // Add the buttons to the window
         window.add(loginButton);
         window.add(exitButton);
-        window.add(usernameInputlabel);
+        window.add(usernameInputLabel);
         window.add(usernameText);
-        window.add(passwordInputlabel);
+        window.add(passwordInputLabel);
         window.add(passwordText);
 
         // Set the program to exit when the window is closed
@@ -142,29 +104,32 @@ public class GUI extends JFrame implements ActionListener {
         // Set the title
         frame.setTitle("Student Teacher Database");
 
-        // Set the positions of the buttons
-        layout.putConstraint(
-                SpringLayout.NORTH, usernameInputlabel, 10, SpringLayout.NORTH, window);
-        layout.putConstraint(
-                SpringLayout.NORTH, usernameText, 5, SpringLayout.SOUTH, usernameInputlabel);
-        layout.putConstraint(
-                SpringLayout.WEST, usernameText, 0, SpringLayout.WEST, usernameInputlabel);
-        layout.putConstraint(
-                SpringLayout.NORTH, passwordInputlabel, 10, SpringLayout.SOUTH, usernameText);
-        layout.putConstraint(
-                SpringLayout.WEST, passwordInputlabel, 0, SpringLayout.WEST, usernameText);
-        layout.putConstraint(
-                SpringLayout.NORTH, passwordText, 5, SpringLayout.SOUTH, passwordInputlabel);
-        layout.putConstraint(SpringLayout.NORTH, exitButton, 20, SpringLayout.SOUTH, passwordText);
-        layout.putConstraint(SpringLayout.NORTH, loginButton, 20, SpringLayout.SOUTH, passwordText);
-        layout.putConstraint(SpringLayout.WEST, loginButton, 20, SpringLayout.WEST, window);
-        layout.putConstraint(SpringLayout.WEST, exitButton, 0, SpringLayout.EAST, loginButton);
+        // Setup the login layout
+        loginLayout = new SpringLayout();
+
+        // Set the positions of the elements on the login page
+        loginLayout.putConstraint(
+                SpringLayout.NORTH, usernameInputLabel, 10, SpringLayout.NORTH, window);
+        loginLayout.putConstraint(
+                SpringLayout.NORTH, usernameText, 5, SpringLayout.SOUTH, usernameInputLabel);
+        loginLayout.putConstraint(
+                SpringLayout.WEST, usernameText, 0, SpringLayout.WEST, usernameInputLabel);
+        loginLayout.putConstraint(
+                SpringLayout.NORTH, passwordInputLabel, 10, SpringLayout.SOUTH, usernameText);
+        loginLayout.putConstraint(
+                SpringLayout.WEST, passwordInputLabel, 0, SpringLayout.WEST, usernameText);
+        loginLayout.putConstraint(
+                SpringLayout.NORTH, passwordText, 5, SpringLayout.SOUTH, passwordInputLabel);
+        loginLayout.putConstraint(SpringLayout.NORTH, exitButton, 20, SpringLayout.SOUTH, passwordText);
+        loginLayout.putConstraint(SpringLayout.NORTH, loginButton, 20, SpringLayout.SOUTH, passwordText);
+        loginLayout.putConstraint(SpringLayout.WEST, loginButton, 20, SpringLayout.WEST, window);
+        loginLayout.putConstraint(SpringLayout.WEST, exitButton, 0, SpringLayout.EAST, loginButton);
+
+        // Set the layout of the window
+        window.setLayout(loginLayout);
 
         // Pack the frame
         frame.pack();
-
-        // Update the visual reference
-        SwingUtilities.updateComponentTreeUI(frame);
 
         // Make the window visible
         frame.setVisible(true);
@@ -173,19 +138,20 @@ public class GUI extends JFrame implements ActionListener {
     // Process button clicks
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == loginButton) {
-            window.remove(loginButton);
-            window.remove(exitButton);
-            window.remove(usernameInputlabel);
-            window.remove(usernameText);
-            window.remove(passwordInputlabel);
-            window.remove(passwordText);
-
-            window.add(addTeacherButton);
-            window.add(addStudentButton);
 
             // ! WRITE THE CHECK HERE
             JOptionPane.showMessageDialog(
                     window, "Check not written", "Login status", JOptionPane.INFORMATION_MESSAGE);
+
+            if (true/* Write check here */) {
+                switchToDataPage();
+            }
+            else {
+                passwordText.setText("");
+            }
+
+
+
         } else if (ae.getSource() == exitButton) {
             System.exit(0);
         } else if (ae.getSource() == addTeacherButton) {
@@ -199,6 +165,46 @@ public class GUI extends JFrame implements ActionListener {
         } else if (ae.getSource() == submitButtonStudent) {
             window.remove(submitButtonStudent);
         }
+    }
+
+    public void switchToLoginPage() {
+
+    }
+
+    public void switchToDataPage() {
+
+        // Remove the old window details
+        window.removeAll();
+        window.repaint();
+
+        // Add the new window details
+        window.add(studentDataLabel);
+        window.add(teacherDataLabel);
+        //window.add(addTeacherButton);
+        //window.add(addStudentButton);
+
+        // Re-create the layout (must be done every time as the list of objects could change)
+        dataExplorerLayout = new SpringLayout();
+
+        // Add the constraints to the display
+        dataExplorerLayout.putConstraint(SpringLayout.NORTH, studentDataLabel, 0, SpringLayout.NORTH, window);
+
+        JLabel lastAddressLabel = new Person("Bryson", new Address("My street", "My city", "My state", 0000), 2003).addToWindow(window, dataExplorerLayout, studentDataLabel);
+        dataExplorerLayout.putConstraint(SpringLayout.NORTH, teacherDataLabel, 20, SpringLayout.SOUTH, lastAddressLabel);
+
+        // Set the new layout
+        window.setLayout(dataExplorerLayout);
+
+        // Pack the window (solves all component constraints)
+        frame.pack();
+    }
+
+    public void switchToNewTeacherPage() {
+
+    }
+
+    public void switchToNewStudentPage() {
+
     }
 
     public static void main(String[] args) {
