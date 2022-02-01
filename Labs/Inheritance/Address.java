@@ -1,7 +1,6 @@
 package Inheritance;
 
 import java.awt.*;
-import java.io.StreamTokenizer;
 
 import javax.swing.*;
 
@@ -44,6 +43,7 @@ public class Address {
 
     /**
      * Adds the Address object details to the specified window
+     *
      * @param window The container to add the Address details to
      * @param layout The layout to add the components to
      * @param aboveComponent The component that the address data should come after
@@ -65,7 +65,8 @@ public class Address {
 
         // Add the elements to the layout
         // Stack them on top of one another
-        layout.putConstraint(SpringLayout.NORTH, streetLabel, 0, SpringLayout.SOUTH, aboveComponent);
+        layout.putConstraint(
+                SpringLayout.NORTH, streetLabel, 0, SpringLayout.SOUTH, aboveComponent);
         layout.putConstraint(SpringLayout.NORTH, cityLabel, 0, SpringLayout.SOUTH, streetLabel);
         layout.putConstraint(SpringLayout.NORTH, stateLabel, 0, SpringLayout.SOUTH, cityLabel);
         layout.putConstraint(SpringLayout.NORTH, zipLabel, 0, SpringLayout.SOUTH, stateLabel);

@@ -1,6 +1,7 @@
 package Inheritance;
 
 import java.awt.*;
+
 import javax.swing.*;
 
 public class Student extends Person {
@@ -41,6 +42,7 @@ public class Student extends Person {
 
     /**
      * Adds the Student object details to the specified window
+     *
      * @param window The container to add the Student details to
      * @param layout The layout to add the components to
      * @param aboveComponent The component that the address data should come after
@@ -66,7 +68,6 @@ public class Student extends Person {
         layout.putConstraint(SpringLayout.NORTH, idLabel, 0, SpringLayout.SOUTH, lastPersonObj);
         layout.putConstraint(SpringLayout.NORTH, majorLabel, 0, SpringLayout.SOUTH, idLabel);
         layout.putConstraint(SpringLayout.NORTH, gpaLabel, 0, SpringLayout.SOUTH, majorLabel);
-
 
         // Make sure that they align to the above component
         layout.putConstraint(SpringLayout.WEST, idLabel, 0, SpringLayout.WEST, lastPersonObj);

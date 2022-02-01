@@ -120,8 +120,10 @@ public class GUI extends JFrame implements ActionListener {
                 SpringLayout.WEST, passwordInputLabel, 0, SpringLayout.WEST, usernameText);
         loginLayout.putConstraint(
                 SpringLayout.NORTH, passwordText, 5, SpringLayout.SOUTH, passwordInputLabel);
-        loginLayout.putConstraint(SpringLayout.NORTH, exitButton, 20, SpringLayout.SOUTH, passwordText);
-        loginLayout.putConstraint(SpringLayout.NORTH, loginButton, 20, SpringLayout.SOUTH, passwordText);
+        loginLayout.putConstraint(
+                SpringLayout.NORTH, exitButton, 20, SpringLayout.SOUTH, passwordText);
+        loginLayout.putConstraint(
+                SpringLayout.NORTH, loginButton, 20, SpringLayout.SOUTH, passwordText);
         loginLayout.putConstraint(SpringLayout.WEST, loginButton, 20, SpringLayout.WEST, window);
         loginLayout.putConstraint(SpringLayout.WEST, exitButton, 0, SpringLayout.EAST, loginButton);
 
@@ -143,14 +145,11 @@ public class GUI extends JFrame implements ActionListener {
             JOptionPane.showMessageDialog(
                     window, "Check not written", "Login status", JOptionPane.INFORMATION_MESSAGE);
 
-            if (true/* Write check here */) {
+            if (true /* Write check here */) {
                 switchToDataPage();
-            }
-            else {
+            } else {
                 passwordText.setText("");
             }
-
-
 
         } else if (ae.getSource() == exitButton) {
             System.exit(0);
@@ -167,9 +166,7 @@ public class GUI extends JFrame implements ActionListener {
         }
     }
 
-    public void switchToLoginPage() {
-
-    }
+    public void switchToLoginPage() {}
 
     public void switchToDataPage() {
 
@@ -180,17 +177,21 @@ public class GUI extends JFrame implements ActionListener {
         // Add the new window details
         window.add(studentDataLabel);
         window.add(teacherDataLabel);
-        //window.add(addTeacherButton);
-        //window.add(addStudentButton);
+        // window.add(addTeacherButton);
+        // window.add(addStudentButton);
 
         // Re-create the layout (must be done every time as the list of objects could change)
         dataExplorerLayout = new SpringLayout();
 
         // Add the constraints to the display
-        dataExplorerLayout.putConstraint(SpringLayout.NORTH, studentDataLabel, 0, SpringLayout.NORTH, window);
+        dataExplorerLayout.putConstraint(
+                SpringLayout.NORTH, studentDataLabel, 0, SpringLayout.NORTH, window);
 
-        JLabel lastAddressLabel = new Person("Bryson", new Address("My street", "My city", "My state", 0000), 2003).addToWindow(window, dataExplorerLayout, studentDataLabel);
-        dataExplorerLayout.putConstraint(SpringLayout.NORTH, teacherDataLabel, 20, SpringLayout.SOUTH, lastAddressLabel);
+        JLabel lastAddressLabel =
+                new Person("Bryson", new Address("My street", "My city", "My state", 0000), 2003)
+                        .addToWindow(window, dataExplorerLayout, studentDataLabel);
+        dataExplorerLayout.putConstraint(
+                SpringLayout.NORTH, teacherDataLabel, 20, SpringLayout.SOUTH, lastAddressLabel);
 
         // Set the new layout
         window.setLayout(dataExplorerLayout);
@@ -199,13 +200,9 @@ public class GUI extends JFrame implements ActionListener {
         frame.pack();
     }
 
-    public void switchToNewTeacherPage() {
+    public void switchToNewTeacherPage() {}
 
-    }
-
-    public void switchToNewStudentPage() {
-
-    }
+    public void switchToNewStudentPage() {}
 
     public static void main(String[] args) {
         GUI theGUI = new GUI();

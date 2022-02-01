@@ -1,6 +1,7 @@
 package Inheritance;
 
 import java.awt.*;
+
 import javax.swing.*;
 
 public class Teacher extends Person {
@@ -20,6 +21,7 @@ public class Teacher extends Person {
 
     /**
      * Adds the Teacher object details to the specified window
+     *
      * @param window The container to add the Teacher details to
      * @param layout The layout to add the components to
      * @param aboveComponent The component that the address data should come after

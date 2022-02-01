@@ -4,8 +4,8 @@ public class Testing {
     public static void main(String args[]) {
         Person p1 = new Person("Ellie", new Address("Windon Ave", "Pittsburgh", "PA", 17047), 2006);
         Person p2 =
-                new Person("Christian",
-                        new Address( "Riverside", "Philadelphia", "PA", 17864), 2003);
+                new Person(
+                        "Christian", new Address("Riverside", "Philadelphia", "PA", 17864), 2003);
 
         Student s1 =
                 new Student(
@@ -26,11 +26,9 @@ public class Testing {
 
         Teacher t1 =
                 new Teacher(
-                        "Gwen",
-                        new Address("Valley", "Baltimore", "MD", 21234), 834201, 70, 000);
+                        "Gwen", new Address("Valley", "Baltimore", "MD", 21234), 834201, 70, 000);
         Teacher t2 =
                 new Teacher(
-                        "Rich",
-                        new Address("Valley", "Baltimore", "MD", 21234), 340873, 80, 000);
+                        "Rich", new Address("Valley", "Baltimore", "MD", 21234), 340873, 80, 000);
     }
 }
