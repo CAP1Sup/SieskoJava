@@ -49,7 +49,8 @@ public class Address {
      * @param aboveComponent The component that the address data should come after
      * @return Returns the last label, allowing the entries to be stacked
      */
-    public JLabel addToWindow(Container window, SpringLayout layout, JComponent aboveComponent, int spacing) {
+    public JLabel addToWindow(
+            Container window, SpringLayout layout, JComponent aboveComponent, int spacing) {
 
         // Create the different labels of text
         JLabel streetLabel = new JLabel("Street: " + this.street);
