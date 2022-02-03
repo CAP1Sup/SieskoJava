@@ -27,7 +27,7 @@ public class Teacher extends Person {
      * @param aboveComponent The component that the address data should come after
      * @return Returns the last label, allowing the entries to be stacked
      */
-    public JLabel addToWindow(Container window, SpringLayout layout, JComponent aboveComponent) {
+    public JLabel addToWindow(Container window, SpringLayout layout, JComponent aboveComponent, int spacing) {
 
         // Create the different labels of text
         JLabel idLabel = new JLabel("ID: " + this.id);
@@ -38,7 +38,7 @@ public class Teacher extends Person {
         window.add(salaryLabel);
 
         // Set up the Person items (store the last element)
-        JLabel lastPersonObj = super.addToWindow(window, layout, aboveComponent);
+        JLabel lastPersonObj = super.addToWindow(window, layout, aboveComponent, spacing);
 
         // Add the elements to the layout
         // Stack them on top of one another
