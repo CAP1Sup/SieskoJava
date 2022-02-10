@@ -79,32 +79,44 @@ public class Person {
         return birthYearLabel;
     }
 
-    /** @return Address return the address */
+    /**
+     * @return Address return the address
+     */
     public Address getAddress() {
         return address;
     }
 
-    /** @param address the address to set */
+    /**
+     * @param address the address to set
+     */
     public void setAddress(Address address) {
         this.address = address;
     }
 
-    /** @return String return the name */
+    /**
+     * @return String return the name
+     */
     public String getName() {
         return name;
     }
 
-    /** @param name the name to set */
+    /**
+     * @param name the name to set
+     */
     public void setName(String name) {
         this.name = name;
     }
 
-    /** @return int return the yearOfBirth */
+    /**
+     * @return int return the yearOfBirth
+     */
     public int getYearOfBirth() {
         return yearOfBirth;
     }
 
-    /** @param yearOfBirth the yearOfBirth to set */
+    /**
+     * @param yearOfBirth the yearOfBirth to set
+     */
     public void setYearOfBirth(int yearOfBirth) {
         this.yearOfBirth = yearOfBirth;
     }

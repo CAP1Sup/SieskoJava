@@ -263,31 +263,37 @@ public class GUI extends JFrame implements ActionListener {
         return false;
     }
 
-    //When Information is entered, add new teacher to the arrayList of teachers
+    // When Information is entered, add new teacher to the arrayList of teachers
     public void createNewTeacher() {
 
-        teachers.add(new Teacher(nameText.getText().strip(),
-                    (new Address(streetText.getText().strip(),
-                    cityText.getText().strip(),
-                    stateText.getText().strip(),
-                    Integer.parseInt(zipText.getText().strip()))),
-                    Integer.parseInt(yearOfBirthText.getText().strip()),
-                    Integer.parseInt(idText.getText().strip()),
-                    Integer.parseInt(salaryText.getText().strip())));
+        teachers.add(
+                new Teacher(
+                        nameText.getText().strip(),
+                        (new Address(
+                                streetText.getText().strip(),
+                                cityText.getText().strip(),
+                                stateText.getText().strip(),
+                                Integer.parseInt(zipText.getText().strip()))),
+                        Integer.parseInt(yearOfBirthText.getText().strip()),
+                        Integer.parseInt(idText.getText().strip()),
+                        Integer.parseInt(salaryText.getText().strip())));
     }
 
-    //When Information is entered, add a new Student to the arrayList of students
+    // When Information is entered, add a new Student to the arrayList of students
     public void createNewStudent() {
 
-        students.add(new Student(nameText.getText().strip(),
-                    (new Address(streetText.getText().strip(),
-                    cityText.getText().strip(),
-                    stateText.getText().strip(),
-                    Integer.parseInt(zipText.getText().strip()))),
-                    Integer.parseInt(yearOfBirthText.getText().strip()),
-                    Integer.parseInt(idText.getText().strip()),
-                    majorText.getText().strip(),
-                    Double.parseDouble(gpaText.getText().strip())));
+        students.add(
+                new Student(
+                        nameText.getText().strip(),
+                        (new Address(
+                                streetText.getText().strip(),
+                                cityText.getText().strip(),
+                                stateText.getText().strip(),
+                                Integer.parseInt(zipText.getText().strip()))),
+                        Integer.parseInt(yearOfBirthText.getText().strip()),
+                        Integer.parseInt(idText.getText().strip()),
+                        majorText.getText().strip(),
+                        Double.parseDouble(gpaText.getText().strip())));
     }
 
     public void switchToLoginPage() {
@@ -384,8 +390,8 @@ public class GUI extends JFrame implements ActionListener {
         // Set the new layout
         panel.setLayout(dataExplorerLayout);
 
-        //Add edit Buttons
-        //for(int i = 0; i < students.size(); i++){}
+        // Add edit Buttons
+        // for(int i = 0; i < students.size(); i++){}
 
         // Pack the window (solves all component constraints)
         this.pack();
@@ -510,7 +516,7 @@ public class GUI extends JFrame implements ActionListener {
         // Set the layout of the window
         panel.setLayout(newStudentLayout);
 
-        //Clear all Text Fields
+        // Clear all Text Fields
         nameText.setText("");
         streetText.setText("");
         cityText.setText("");
@@ -636,7 +642,7 @@ public class GUI extends JFrame implements ActionListener {
         // Set the layout of the window
         panel.setLayout(newTeacherLayout);
 
-        //Clears all of the text fields
+        // Clears all of the text fields
         nameText.setText("");
         streetText.setText("");
         cityText.setText("");

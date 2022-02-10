@@ -79,32 +79,44 @@ public class Student extends Person {
         return gpaLabel;
     }
 
-    /** @return int return the ID */
+    /**
+     * @return int return the ID
+     */
     public int getID() {
         return id;
     }
 
-    /** @param id the ID to set */
+    /**
+     * @param id the ID to set
+     */
     public void setID(int id) {
         this.id = id;
     }
 
-    /** @return String return the major */
+    /**
+     * @return String return the major
+     */
     public String getMajor() {
         return major;
     }
 
-    /** @param major the major to set */
+    /**
+     * @param major the major to set
+     */
     public void setMajor(String major) {
         this.major = major;
     }
 
-    /** @return double return the GPA */
+    /**
+     * @return double return the GPA
+     */
     public double getGPA() {
         return GPA;
     }
 
-    /** @param GPA the GPA to set */
+    /**
+     * @param GPA the GPA to set
+     */
     public void setGPA(double GPA) {
         this.GPA = GPA;
     }

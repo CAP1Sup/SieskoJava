@@ -54,22 +54,30 @@ public class Teacher extends Person {
         return salaryLabel;
     }
 
-    /** @return int return the id */
+    /**
+     * @return int return the id
+     */
     public int getId() {
         return id;
     }
 
-    /** @param id the id to set */
+    /**
+     * @param id the id to set
+     */
     public void setId(int id) {
         this.id = id;
     }
 
-    /** @return int return the salary */
+    /**
+     * @return int return the salary
+     */
     public int getSalary() {
         return salary;
     }
 
-    /** @param salary the salary to set */
+    /**
+     * @param salary the salary to set
+     */
     public void setSalary(int salary) {
         this.salary = salary;
     }

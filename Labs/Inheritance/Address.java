@@ -82,42 +82,58 @@ public class Address {
         return zipLabel;
     }
 
-    /** @return String return the street */
+    /**
+     * @return String return the street
+     */
     public String getStreet() {
         return street;
     }
 
-    /** @param street the street to set */
+    /**
+     * @param street the street to set
+     */
     public void setStreet(String street) {
         this.street = street;
     }
 
-    /** @return String return the city */
+    /**
+     * @return String return the city
+     */
     public String getCity() {
         return city;
     }
 
-    /** @param city the city to set */
+    /**
+     * @param city the city to set
+     */
     public void setCity(String city) {
         this.city = city;
     }
 
-    /** @return String return the state */
+    /**
+     * @return String return the state
+     */
     public String getState() {
         return state;
     }
 
-    /** @param state the state to set */
+    /**
+     * @param state the state to set
+     */
     public void setState(String state) {
         this.state = state;
     }
 
-    /** @return int return the zip */
+    /**
+     * @return int return the zip
+     */
     public int getZip() {
         return zip;
     }
 
-    /** @param zip the zip to set */
+    /**
+     * @param zip the zip to set
+     */
     public void setZip(int zip) {
         this.zip = zip;
     }
