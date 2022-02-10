@@ -2,11 +2,16 @@ package Inheritance;
 
 public class Login {
     private String username;
-    private int password;
+    private int passwordHash;
 
-    public Login(String username, int password) {
+    public Login(String username, int passwordHash) {
         this.username = username;
-        this.password = password;
+        this.passwordHash = passwordHash;
+    }
+
+    public Login(String username, String password) {
+        this.username = username;
+        this.passwordHash = password.hashCode();
     }
 
     /** @return String return the username */
@@ -20,12 +25,17 @@ public class Login {
     }
 
     /** @return String return the password */
-    public int getPassword() {
-        return password;
+    public int getPasswordHash() {
+        return passwordHash;
     }
 
     /** @param password the password to set */
-    public void setPassword(int password) {
-        this.password = password;
+    public void setPassword(String password) {
+        this.passwordHash = password.hashCode();
+    }
+
+    /** @param passwordHash the password to set */
+    public void setPasswordHash(int passwordHash) {
+        this.passwordHash = passwordHash;
     }
 }

@@ -10,8 +10,8 @@ import javax.swing.*;
 public class GUI extends JFrame implements ActionListener {
 
     // Main framing and window
-    private static JFrame frame;
     private static Container window;
+    private static JPanel panel;
 
     // Layouts
     private static SpringLayout loginLayout;
@@ -61,7 +61,7 @@ public class GUI extends JFrame implements ActionListener {
     private static JButton cancelButton;
 
     // Login array (for storing available logins)
-    private static ArrayList<Login> logins;
+    private static ArrayList<Login> logins = new ArrayList<Login>();
 
     private static ArrayList<Student> students = new ArrayList<Student>();
     private static ArrayList<Teacher> teachers = new ArrayList<Teacher>();
@@ -70,7 +70,12 @@ public class GUI extends JFrame implements ActionListener {
     private static Dimension screenSize;
 
     GUI() {
+        super();
 
+        // Testing
+        logins.add(new Login("CAP1Sup", "12345"));
+        logins.add(new Login("Ellie42", "4242"));
+        /*
         students.add(
                 new Student(
                         "Will",
@@ -79,6 +84,14 @@ public class GUI extends JFrame implements ActionListener {
                         456372,
                         "Aerospace Engineering",
                         3.80));
+        students.add(
+            new Student(
+                    "Will",
+                    new Address("Mountain Drive", "State College", "PA", 18053),
+                    2003,
+                    456372,
+                    "Aerospace Engineering",
+                    3.80));
         students.add(
                 new Student(
                         "Trinity",
@@ -93,21 +106,21 @@ public class GUI extends JFrame implements ActionListener {
                         "Gwen", new Address("Valley", "Baltimore", "MD", 21234), 834201, 70, 000));
         teachers.add(
                 new Teacher(
-                        "Rich", new Address("Valley", "Baltimore", "MD", 21234), 340873, 80, 000));
+                        "Rich", new Address("Valley", "Baltimore", "MD", 21234), 340873, 80, 000));*/
 
         // Get the size of the computer window
         Rectangle screenRect =
                 GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
         screenSize = new Dimension((int) screenRect.getWidth(), (int) screenRect.getHeight());
 
-        // Initialize the desk array
-        logins = new ArrayList<Login>();
-
-        // Create the instance
-        frame = new JFrame();
+        // Create the panel
+        panel = new JPanel();
 
         // Get the container
-        window = frame.getContentPane();
+        window = this.getContentPane();
+
+        // Add the scroll pane
+        add(panel);
 
         // Create button instances
         loginButton = new JButton("Login");
@@ -160,40 +173,33 @@ public class GUI extends JFrame implements ActionListener {
         salaryText = new JTextField(30);
 
         // Set the program to exit when the window is closed
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        // Set background color
-        frame.setBackground(Color.BLUE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Set the size (same as the screen size, so fullscreen)
-        frame.setPreferredSize(screenSize);
+        setPreferredSize(screenSize);
 
         // Allow the window to be resized
-        frame.setResizable(true);
+        setResizable(true);
 
         // Set the title
-        frame.setTitle("Student Teacher Database");
+        setTitle("Student Teacher Database");
 
         // Switch to the login page
         switchToLoginPage();
 
         // Make the window visible
-        frame.setVisible(true);
+        setVisible(true);
     }
 
     // Process button clicks
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == loginButton) {
 
-            // ! WRITE THE CHECK HERE
-            JOptionPane.showMessageDialog(
-                    window, "Check not written", "Login status", JOptionPane.INFORMATION_MESSAGE);
-
             if (allowLogin()) {
                 switchToDataPage();
             } else {
                 JOptionPane.showMessageDialog(
-                        window,
+                        panel,
                         "Login failed!",
                         "Please try again",
                         JOptionPane.INFORMATION_MESSAGE);
@@ -210,17 +216,17 @@ public class GUI extends JFrame implements ActionListener {
             createNewTeacher();
             switchToDataPage();
             JOptionPane.showMessageDialog(
-                    window,
-                    "Success!",
+                    panel,
                     "You're new teacher has been added!",
+                    "Success!",
                     JOptionPane.INFORMATION_MESSAGE);
         } else if (ae.getSource() == submitButtonStudent) {
             createNewStudent();
             switchToDataPage();
             JOptionPane.showMessageDialog(
-                    window,
-                    "Success!",
+                    panel,
                     "You're new student has been added!",
+                    "Success!",
                     JOptionPane.INFORMATION_MESSAGE);
         } else if (ae.getSource() == cancelButton) {
             switchToDataPage();
@@ -238,35 +244,72 @@ public class GUI extends JFrame implements ActionListener {
         String usernameInput = usernameText.getText();
         String passwordInput = passwordText.getText();
 
-        return true;
+        // Loop through the logins, checking if one matches
+        for (Login login : logins) {
+
+            // Check to see if the username matches
+            if (login.getUsername().equals(usernameInput.strip())) {
+
+                // Check that the password hashes match
+                if (login.getPasswordHash() == passwordInput.strip().hashCode()) {
+
+                    // Both fields match, allow the login
+                    return true;
+                }
+            }
+        }
+
+        // If we made it here, there is no login that matches
+        return false;
     }
 
+    //When Information is entered, add new teacher to the arrayList of teachers
     public void createNewTeacher() {
-        // teachers.add(new Teacher(nameText.getText().strip(), ))
+
+        teachers.add(new Teacher(nameText.getText().strip(),
+                    (new Address(streetText.getText().strip(),
+                    cityText.getText().strip(),
+                    stateText.getText().strip(),
+                    Integer.parseInt(zipText.getText().strip()))),
+                    Integer.parseInt(yearOfBirthText.getText().strip()),
+                    Integer.parseInt(idText.getText().strip()),
+                    Integer.parseInt(salaryText.getText().strip())));
     }
 
-    public void createNewStudent() {}
+    //When Information is entered, add a new Student to the arrayList of students
+    public void createNewStudent() {
+
+        students.add(new Student(nameText.getText().strip(),
+                    (new Address(streetText.getText().strip(),
+                    cityText.getText().strip(),
+                    stateText.getText().strip(),
+                    Integer.parseInt(zipText.getText().strip()))),
+                    Integer.parseInt(yearOfBirthText.getText().strip()),
+                    Integer.parseInt(idText.getText().strip()),
+                    majorText.getText().strip(),
+                    Double.parseDouble(gpaText.getText().strip())));
+    }
 
     public void switchToLoginPage() {
 
         // Remove the old window details
-        window.removeAll();
-        window.repaint();
+        panel.removeAll();
+        panel.repaint();
 
         // Add the buttons to the window
-        window.add(loginButton);
-        window.add(exitButton);
-        window.add(usernameInputLabel);
-        window.add(usernameText);
-        window.add(passwordInputLabel);
-        window.add(passwordText);
+        panel.add(loginButton);
+        panel.add(exitButton);
+        panel.add(usernameInputLabel);
+        panel.add(usernameText);
+        panel.add(passwordInputLabel);
+        panel.add(passwordText);
 
         // Setup the login layout
         loginLayout = new SpringLayout();
 
         // Set the positions of the elements on the login page
         loginLayout.putConstraint(
-                SpringLayout.NORTH, usernameInputLabel, 10, SpringLayout.NORTH, window);
+                SpringLayout.NORTH, usernameInputLabel, 10, SpringLayout.NORTH, panel);
         loginLayout.putConstraint(
                 SpringLayout.NORTH, usernameText, 5, SpringLayout.SOUTH, usernameInputLabel);
         loginLayout.putConstraint(
@@ -281,41 +324,41 @@ public class GUI extends JFrame implements ActionListener {
                 SpringLayout.NORTH, exitButton, 20, SpringLayout.SOUTH, passwordText);
         loginLayout.putConstraint(
                 SpringLayout.NORTH, loginButton, 20, SpringLayout.SOUTH, passwordText);
-        loginLayout.putConstraint(SpringLayout.WEST, loginButton, 20, SpringLayout.WEST, window);
+        loginLayout.putConstraint(SpringLayout.WEST, loginButton, 20, SpringLayout.WEST, panel);
         loginLayout.putConstraint(SpringLayout.WEST, exitButton, 0, SpringLayout.EAST, loginButton);
 
         // Set the layout of the window
-        window.setLayout(loginLayout);
+        panel.setLayout(loginLayout);
 
         // Pack the window (solves all component constraints)
-        frame.pack();
+        this.pack();
     }
 
     public void switchToDataPage() {
 
         // Remove the old window details
-        window.removeAll();
-        window.repaint();
+        panel.removeAll();
+        panel.repaint();
 
         // Add the new window details
-        window.add(studentDataLabel);
-        window.add(addStudentButton);
-        window.add(teacherDataLabel);
-        window.add(addTeacherButton);
+        panel.add(studentDataLabel);
+        panel.add(addStudentButton);
+        panel.add(teacherDataLabel);
+        panel.add(addTeacherButton);
 
         // Re-create the layout (must be done every time as the list of objects could change)
         dataExplorerLayout = new SpringLayout();
 
         // Add the constraints to the display
         dataExplorerLayout.putConstraint(
-                SpringLayout.NORTH, studentDataLabel, 0, SpringLayout.NORTH, window);
+                SpringLayout.NORTH, studentDataLabel, 0, SpringLayout.NORTH, panel);
 
         // Create a storage for the last label, which will allow nice formatting
         JLabel lastLabel = studentDataLabel;
 
         // Loop through the student ArrayList, adding each student
         for (Student student : students) {
-            lastLabel = student.addToWindow(window, dataExplorerLayout, lastLabel, 10);
+            lastLabel = student.addToWindow(panel, dataExplorerLayout, lastLabel, 10);
         }
 
         // Add the new student button
@@ -331,7 +374,7 @@ public class GUI extends JFrame implements ActionListener {
 
         // Loop through the student ArrayList, adding each student
         for (Teacher teacher : teachers) {
-            lastLabel = teacher.addToWindow(window, dataExplorerLayout, lastLabel, 10);
+            lastLabel = teacher.addToWindow(panel, dataExplorerLayout, lastLabel, 10);
         }
 
         // Add the new student button
@@ -339,47 +382,50 @@ public class GUI extends JFrame implements ActionListener {
                 SpringLayout.NORTH, addTeacherButton, 10, SpringLayout.SOUTH, lastLabel);
 
         // Set the new layout
-        window.setLayout(dataExplorerLayout);
+        panel.setLayout(dataExplorerLayout);
+
+        //Add edit Buttons
+        //for(int i = 0; i < students.size(); i++){}
 
         // Pack the window (solves all component constraints)
-        frame.pack();
+        this.pack();
     }
 
     public void switchToNewStudentPage() {
 
         // Remove the old window details
-        window.removeAll();
-        window.repaint();
+        panel.removeAll();
+        panel.repaint();
 
         // Reset the layout
         newStudentLayout = new SpringLayout();
 
         // Add all of the labels to the window
-        window.add(nameInputLabel);
-        window.add(nameText);
-        window.add(birthYearInputLabel);
-        window.add(yearOfBirthText);
-        window.add(streetInputLabel);
-        window.add(streetText);
-        window.add(cityInputLabel);
-        window.add(cityText);
-        window.add(stateInputLabel);
-        window.add(stateText);
-        window.add(zipInputLabel);
-        window.add(zipText);
-        window.add(idInputLabel);
-        window.add(idText);
-        window.add(studentMajorLabel);
-        window.add(majorText);
-        window.add(studentGPALabel);
-        window.add(gpaText);
-        window.add(submitButtonStudent);
-        window.add(cancelButton);
+        panel.add(nameInputLabel);
+        panel.add(nameText);
+        panel.add(birthYearInputLabel);
+        panel.add(yearOfBirthText);
+        panel.add(streetInputLabel);
+        panel.add(streetText);
+        panel.add(cityInputLabel);
+        panel.add(cityText);
+        panel.add(stateInputLabel);
+        panel.add(stateText);
+        panel.add(zipInputLabel);
+        panel.add(zipText);
+        panel.add(idInputLabel);
+        panel.add(idText);
+        panel.add(studentMajorLabel);
+        panel.add(majorText);
+        panel.add(studentGPALabel);
+        panel.add(gpaText);
+        panel.add(submitButtonStudent);
+        panel.add(cancelButton);
 
         // Put constraints on the items in the window
         // Top / bottom constraints
         newStudentLayout.putConstraint(
-                SpringLayout.NORTH, nameInputLabel, 0, SpringLayout.NORTH, window);
+                SpringLayout.NORTH, nameInputLabel, 0, SpringLayout.NORTH, panel);
         newStudentLayout.putConstraint(
                 SpringLayout.NORTH, nameText, 0, SpringLayout.SOUTH, nameInputLabel);
         newStudentLayout.putConstraint(
@@ -421,7 +467,7 @@ public class GUI extends JFrame implements ActionListener {
 
         // Left / Right constraints
         newStudentLayout.putConstraint(
-                SpringLayout.WEST, nameInputLabel, 0, SpringLayout.WEST, window);
+                SpringLayout.WEST, nameInputLabel, 0, SpringLayout.WEST, panel);
         newStudentLayout.putConstraint(
                 SpringLayout.WEST, nameText, 0, SpringLayout.WEST, nameInputLabel);
         newStudentLayout.putConstraint(
@@ -462,47 +508,58 @@ public class GUI extends JFrame implements ActionListener {
                 SpringLayout.WEST, cancelButton, 0, SpringLayout.EAST, submitButtonStudent);
 
         // Set the layout of the window
-        window.setLayout(newStudentLayout);
+        panel.setLayout(newStudentLayout);
+
+        //Clear all Text Fields
+        nameText.setText("");
+        streetText.setText("");
+        cityText.setText("");
+        stateText.setText("");
+        zipText.setText("");
+        yearOfBirthText.setText("");
+        idText.setText("");
+        majorText.setText("");
+        gpaText.setText("");
 
         // Pack the frame
-        frame.pack();
+        this.pack();
     }
 
     public void switchToNewTeacherPage() {
 
         // Remove all of the old info from the window
-        window.removeAll();
-        window.repaint();
+        panel.removeAll();
+        panel.repaint();
 
         // Reset the layout of the teacher input layout
         newTeacherLayout = new SpringLayout();
 
         // Add all new labels and text fields
-        window.add(nameInputLabel);
-        window.add(nameText);
-        window.add(birthYearInputLabel);
-        window.add(yearOfBirthText);
-        window.add(streetInputLabel);
-        window.add(streetText);
-        window.add(cityInputLabel);
-        window.add(cityText);
-        window.add(stateInputLabel);
-        window.add(stateText);
-        window.add(zipInputLabel);
-        window.add(zipText);
-        window.add(idInputLabel);
-        window.add(idText);
-        window.add(teacherSalaryLabel);
-        window.add(salaryText);
+        panel.add(nameInputLabel);
+        panel.add(nameText);
+        panel.add(birthYearInputLabel);
+        panel.add(yearOfBirthText);
+        panel.add(streetInputLabel);
+        panel.add(streetText);
+        panel.add(cityInputLabel);
+        panel.add(cityText);
+        panel.add(stateInputLabel);
+        panel.add(stateText);
+        panel.add(zipInputLabel);
+        panel.add(zipText);
+        panel.add(idInputLabel);
+        panel.add(idText);
+        panel.add(teacherSalaryLabel);
+        panel.add(salaryText);
 
         // Add buttons
-        window.add(submitButtonTeacher);
-        window.add(cancelButton);
+        panel.add(submitButtonTeacher);
+        panel.add(cancelButton);
 
         // Put constraints on the items in the window
         // Top / bottom constraints
         newTeacherLayout.putConstraint(
-                SpringLayout.NORTH, nameInputLabel, 0, SpringLayout.NORTH, window);
+                SpringLayout.NORTH, nameInputLabel, 0, SpringLayout.NORTH, panel);
         newTeacherLayout.putConstraint(
                 SpringLayout.NORTH, nameText, 0, SpringLayout.SOUTH, nameInputLabel);
         newTeacherLayout.putConstraint(
@@ -540,7 +597,7 @@ public class GUI extends JFrame implements ActionListener {
 
         // Left / Right constraints
         newTeacherLayout.putConstraint(
-                SpringLayout.WEST, nameInputLabel, 0, SpringLayout.WEST, window);
+                SpringLayout.WEST, nameInputLabel, 0, SpringLayout.WEST, panel);
         newTeacherLayout.putConstraint(
                 SpringLayout.WEST, nameText, 0, SpringLayout.WEST, nameInputLabel);
         newTeacherLayout.putConstraint(
@@ -577,10 +634,20 @@ public class GUI extends JFrame implements ActionListener {
                 SpringLayout.WEST, cancelButton, 0, SpringLayout.EAST, submitButtonTeacher);
 
         // Set the layout of the window
-        window.setLayout(newTeacherLayout);
+        panel.setLayout(newTeacherLayout);
+
+        //Clears all of the text fields
+        nameText.setText("");
+        streetText.setText("");
+        cityText.setText("");
+        stateText.setText("");
+        zipText.setText("");
+        yearOfBirthText.setText("");
+        idText.setText("");
+        salaryText.setText("");
 
         // Pack the frame
-        frame.pack();
+        this.pack();
     }
 
     public static void main(String[] args) {
