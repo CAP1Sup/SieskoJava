@@ -217,7 +217,7 @@ public class GUI extends JFrame implements ActionListener {
             switchToDataPage();
             JOptionPane.showMessageDialog(
                     panel,
-                    "You're new teacher has been added!",
+                    "Your new teacher has been added!",
                     "Success!",
                     JOptionPane.INFORMATION_MESSAGE);
         } else if (ae.getSource() == submitButtonStudent) {
@@ -225,7 +225,7 @@ public class GUI extends JFrame implements ActionListener {
             switchToDataPage();
             JOptionPane.showMessageDialog(
                     panel,
-                    "You're new student has been added!",
+                    "Your new student has been added!",
                     "Success!",
                     JOptionPane.INFORMATION_MESSAGE);
         } else if (ae.getSource() == cancelButton) {
